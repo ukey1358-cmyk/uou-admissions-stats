@@ -750,7 +750,7 @@ h1, h2, h3, h4 { font-family: var(--font-stack); font-weight: 700; margin: 0; co
 .tree .cat.collapsed > ul { display: none; }
 .tree ul { list-style: none; padding: 0 0 0 var(--space-md); margin: 0 0 var(--space-xs); }
 /* 소분류(1.1, 1.2 …) 좌측 들여쓰기 */
-.tree .sub > ul { padding-left: 20px; }
+.tree .sub > ul { padding-left: 25px; }
 .tree .sub-title {
   font-size: 18px;
   font-weight: 600;

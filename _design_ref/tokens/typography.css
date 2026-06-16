@@ -1,0 +1,28 @@
+/* ==========================================================================
+   UOU Design System — Typography Tokens
+   브랜드 전용서체(우리고딕)는 웹폰트가 아니므로 동일 인상의 현대적 고딕으로 대체.
+   웹 본문: Pretendard / Noto Sans KR.
+   ========================================================================== */
+
+:root {
+  /* --- Families ----------------------------------------------------------- */
+  --font-sans: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* --- Weights ------------------------------------------------------------ */
+  --fw-regular: 400;  /* @kind font */ /* 본문 */
+  --fw-medium:  500;  /* @kind font */ /* 강조 본문, 라벨 */
+  --fw-bold:    700;  /* @kind font */ /* 제목, 버튼 */
+
+  /* --- Type scale (size / line-height / weight) -------------------------- */
+  --text-display:    48px;  --leading-display:    56px;  --weight-display: 700;
+  --text-h1:         36px;  --leading-h1:         44px;  --weight-h1:      700;
+  --text-h2:         28px;  --leading-h2:         36px;  --weight-h2:      700;
+  --text-h3:         24px;  --leading-h3:         32px;  --weight-h3:      700;
+  --text-h4:         20px;  --leading-h4:         28px;  --weight-h4:      500;
+  --text-body-lg:    18px;  --leading-body-lg:    28px;
+  --text-body:       16px;  --leading-body:       26px;
+  --text-body-sm:    14px;  --leading-body-sm:    22px;
+  --text-caption:    12px;  --leading-caption:    18px;
+}

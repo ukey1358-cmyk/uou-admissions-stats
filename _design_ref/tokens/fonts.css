@@ -1,0 +1,25 @@
+/* ==========================================================================
+   UOU Design System — Webfonts
+   --------------------------------------------------------------------------
+   브랜드 전용서체(우리고딕)는 웹폰트로 제공되지 않습니다. 동일 인상(장식 배제,
+   단순·명쾌·현대적)을 가진 Pretendard를 웹 대체 서체로 사용합니다.
+
+   ⚠️ SUBSTITUTION FLAG: 우리고딕 → Pretendard.
+      The official print/signage typeface is 우리고딕 (Woori Gothic), which is
+      not licensed as a webfont. Pretendard is the closest modern Korean gothic
+      and is loaded here from CDN. Swap in real 우리고딕 / Pretendard binaries
+      if you have a license and want self-hosted, offline-capable fonts.
+   ========================================================================== */
+
+/* Pretendard — variable Korean/Latin gothic. Declared explicitly so the design
+   system ships a resolvable webfont; binary served from jsDelivr CDN. */
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2") format("woff2-variations");
+}
+
+/* Noto Sans KR — fallback web gothic (Google Fonts). */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 vs 2026 비교 · UOU 입시통계</title>
+  <link rel="icon" type="image/gif" href="assets/img/uou_sm_02.gif" />
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="brand">
+      <img src="assets/img/uou_sm_02.gif" alt="UOU" class="brand-mark" />
+      <span class="brand-text">
+        <span class="ko">울산대학교 입시통계</span>
+        <span class="en">University of Ulsan · Admissions Statistics</span>
+      </span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+    <nav class="primary" id="primary-nav">
+      <a href="2026.html">2026 수시</a>
+      <a href="2025.html">2025 입시결과</a>
+      <a href="compare.html" class="active">비교</a>
+    </nav>
+  </header>
+
+  <div class="section-strip">
+    <span class="label">2025 vs 2026 비교</span>
+    <span class="meta">모집단위별 지원자 수 · Top 5 상승·하락</span>
+  </div>
+
+  <main class="compare-main">
+
+    <!-- Top 5 Up / Down -->
+    <section class="compare-tops">
+      <div class="compare-top">
+        <h3>지원자 증가 Top 5 (2025 → 2026)</h3>
+        <ol id="top-up"></ol>
+      </div>
+      <div class="compare-top is-down">
+        <h3>지원자 감소 Top 5 (2025 → 2026)</h3>
+        <ol id="top-down"></ol>
+      </div>
+    </section>
+
+    <!-- Main table -->
+    <div class="content" id="content-root"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="wordmark-block">
+        <img src="assets/img/uou_sm_02.gif" alt="UOU" class="wordmark-mark" />
+        <span class="wordmark-text">
+          <span class="ko">울산대학교</span>
+          <span class="en">University of Ulsan</span>
+        </span>
+      </div>
+      <div class="meta">
+        데이터 기준일: 2026-05-06 · 담당: 입학관리팀 · 내부용<br/>
+        © University of Ulsan — Admissions Statistics Portal
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/table-renderer.js"></script>
+  <script src="assets/js/chart-renderer.js"></script>
+  <script>
+    (async () => {
+      try {
+        const r = await fetch('../data/compare/2025_vs_2026_applicants.json', { cache: 'no-store' });
+        if (!r.ok) throw new Error('compare json fetch failed: ' + r.status);
+        const data = await r.json();
+
+        // Top 5: 양쪽 연도 모두 지원자 ≥1 인 경우만 (이름 매칭 실패 케이스 제외)
+        const matched = data.rows.filter(r =>
+          typeof r[2] === 'number' && typeof r[3] === 'number' && r[2] > 0 && r[3] > 0 && r[1]);
+        const unmatched = data.rows.filter(r =>
+          (r[2] === 0 || r[3] === 0) && r[1] && r[1] !== '합계');
+        const sortedByDelta = matched.slice().sort((a, b) => (b[4] - a[4]));
+        const up5   = sortedByDelta.slice(0, 5);
+        const down5 = sortedByDelta.slice(-5).reverse();
+
+        // 매칭 실패 안내 배너
+        if (unmatched.length) {
+          const banner = document.createElement('div');
+          banner.className = 'compare-banner';
+          banner.innerHTML = '⚠ 모집단위명이 한쪽 연도에만 존재해 1:1 매칭이 안 된 항목 ' +
+            '<b>' + unmatched.length + '개</b> — 학부 통합·분리 또는 명칭 변경 가능성. ' +
+            '정확한 비교를 위해 <code>aliases.json</code> 사전이 필요합니다. ' +
+            '아래 표에는 이 항목들도 모두 포함되어 있으나 Top 5 위젯에서는 제외했습니다.';
+          document.querySelector('main.compare-main').prepend(banner);
+        }
+
+        const renderList = (id, rows) => {
+          const ul = document.getElementById(id);
+          rows.forEach(row => {
+            const li = document.createElement('li');
+            const sign = row[4] > 0 ? '+' : '';
+            const cls = row[4] >= 0 ? 'delta-up' : 'delta-down';
+            li.innerHTML = `<span>${row[1]} <span style="color:var(--ink-muted-60); font-size:12px;">(${row[0]})</span></span>` +
+                           `<span class="${cls}">${row[2].toLocaleString('ko-KR')} → ${row[3].toLocaleString('ko-KR')} ` +
+                           `(${sign}${row[4]}, ${typeof row[5]==='number' ? sign+row[5].toFixed(1)+'%' : '-'})</span>`;
+            ul.appendChild(li);
+          });
+        };
+        renderList('top-up',   up5);
+        renderList('top-down', down5);
+
+        // Main 표 + 차트
+        const root = document.getElementById('content-root');
+        TableRenderer.render(root, data);
+        ChartRenderer.render(data);
+      } catch (e) {
+        console.error(e);
+        document.getElementById('content-root').innerHTML =
+          '<div class="error-box">비교 데이터를 불러오지 못했습니다. 로컬 서버로 실행해 주세요. ' +
+          '(예: 프로젝트 루트에서 <code>python -m http.server 8000</code> → ' +
+          '<code>http://localhost:8000/site/compare.html</code>)</div>';
+      }
+    })();
+  </script>
+</body>
+</html>

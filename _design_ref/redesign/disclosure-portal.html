@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 6월 대학정보공시 담당자 포털 · 울산대학교</title>
+<link rel="icon" type="image/png" href="../assets/logo/favicon.png">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/lucide@0.456.0/dist/umd/lucide.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* UOU 디자인 시스템 토큰(../styles.css)에 매핑된 로컬 별칭 */
+:root{
+  --radius:var(--radius-lg);
+  --shadow:var(--shadow-sm);
+  --shadow-md:var(--shadow-md);
+  --surface:var(--gray-0);
+}
+
+body{font-family:"Pretendard",var(--font-sans);background:var(--gray-50);color:var(--gray-900);min-height:100vh;font-size:17px}
+.lc{display:inline-flex;align-items:center;justify-content:center}
+.lc svg{width:1em;height:1em;stroke-width:2}
+
+/* ── HEADER ── */
+header{
+  background:var(--gray-0);
+  color:var(--gray-900);
+  padding:0 2rem;
+  position:sticky;top:0;z-index:200;
+  border-bottom:1px solid var(--gray-200);
+  box-shadow:var(--shadow-sm);
+}
+.hd-inner{max-width:1100px;margin:0 auto;height:66px;display:flex;align-items:center;gap:14px}
+.hd-logo{height:34px;width:auto;flex-shrink:0;display:block}
+.hd-divider{width:1px;height:30px;background:var(--gray-200)}
+.hd-title{font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--gray-900)}
+.hd-sub{font-size:17px;color:var(--gray-500);margin-top:2px}
+.hd-badge{
+  margin-left:auto;
+  background:var(--green-50);
+  border:1px solid var(--green-200);
+  color:var(--green-700);font-size:17px;font-weight:700;
+  padding:6px 16px;border-radius:99px;white-space:nowrap;
+}
+
+/* ── TIMELINE BANNER ── */
+.timeline-wrap{background:var(--gray-50);padding:1.1rem 2rem;border-bottom:1px solid var(--gray-100)}
+.timeline-inner{max-width:1100px;margin:0 auto}
+.tl-label{font-size:17px;font-weight:700;color:var(--green-700);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem}
+.tl-steps{display:flex;align-items:flex-start;gap:0;overflow-x:auto;scrollbar-width:none}
+.tl-steps::-webkit-scrollbar{display:none}
+.tl-step{
+  flex:1;min-width:124px;
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;padding:0 .5rem;
+}
+/* connecting rail — segment leading INTO each node (skip the first) */
+.tl-step:not(:first-child)::before{
+  content:'';position:absolute;top:9px;left:-50%;width:100%;height:3px;
+  transform:translateY(-50%);background:var(--gray-200);z-index:0;border-radius:2px;
+}
+.tl-step.done::before,.tl-step.active::before{background:var(--green-400)}
+.tl-dot{
+  width:18px;height:18px;border-radius:50%;
+  background:var(--gray-0);border:3px solid var(--gray-300);
+  margin-bottom:11px;flex-shrink:0;position:relative;z-index:2;
+}
+.tl-step.done .tl-dot{background:var(--green-500);border-color:var(--green-500)}
+.tl-step.active .tl-dot{background:var(--yellow-500);border-color:var(--yellow-500);box-shadow:0 0 0 5px var(--yellow-50)}
+.tl-step.upcoming .tl-dot{background:var(--gray-0);border-color:var(--green-300)}
+.tl-date{font-size:17px;font-weight:700;color:var(--gray-800);white-space:nowrap}
+.tl-step.active .tl-date{color:var(--yellow-700)}
+.tl-step.upcoming .tl-date{color:var(--gray-500)}
+.tl-name{font-size:17px;color:var(--gray-600);text-align:center;margin-top:4px;line-height:1.4}
+.tl-step.active .tl-name{color:var(--gray-800);font-weight:600}
+
+/* ── MAIN ── */
+main{max-width:1100px;margin:0 auto;padding:1.75rem 1.5rem}
+
+/* ── SELECTOR CARD ── */
+.sel-card{
+  background:var(--surface);border:1px solid var(--gray-200);
+  border-radius:var(--radius);padding:1.25rem 1.5rem;
+  margin-bottom:1.25rem;box-shadow:var(--shadow);
+}
+.sel-card h2{font-size:17px;font-weight:700;color:var(--gray-500);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.875rem}
+.sel-row{display:flex;gap:10px;flex-wrap:wrap}
+.sel-group{display:flex;flex-direction:column;gap:6px;flex:1;min-width:180px}
+.sel-group label{font-size:17px;font-weight:600;color:var(--gray-600);display:flex;align-items:center;gap:6px}
+select{
+  height:44px;border:1px solid var(--gray-300);border-radius:var(--radius-sm);
+  padding:0 36px 0 12px;font-size:17px;font-family:inherit;
+  color:var(--gray-900);background:var(--surface);cursor:pointer;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A9EA3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;
+  transition:border-color .15s,box-shadow .15s;
+}
+select:hover{border-color:var(--green-400)}
+select:focus{outline:none;border-color:var(--green-500);box-shadow:var(--focus-ring)}
+select:disabled{opacity:.4;cursor:not-allowed}
+
+/* ── PERSON CARD ── */
+.person-card{
+  background:var(--surface);border:1px solid var(--gray-200);
+  border-radius:var(--radius);padding:1rem 1.5rem;
+  margin-bottom:1.25rem;box-shadow:var(--shadow);
+  display:flex;align-items:center;gap:14px;
+}
+.avatar{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--green-50);color:var(--green-700);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;flex-shrink:0;
+}
+.person-meta h3{font-size:20px;font-weight:700;color:var(--gray-900)}
+.person-meta p{font-size:17px;color:var(--gray-500);margin-top:2px}
+.person-dept{
+  margin-left:auto;font-size:17px;font-weight:700;
+  padding:5px 14px;border-radius:99px;
+  background:var(--green-50);color:var(--green-700);border:1px solid var(--green-200);white-space:nowrap;
+}
+
+/* ── PANELS ── */
+.panel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:800px){.panel-grid{grid-template-columns:1fr}}
+
+.panel{
+  background:var(--surface);border:1px solid var(--gray-200);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  overflow:hidden;display:flex;flex-direction:column;
+}
+.panel-head{
+  padding:.85rem 1.1rem;border-bottom:1px solid var(--gray-100);
+  display:flex;align-items:center;gap:9px;
+  background:var(--gray-50);
+}
+.ph-icon{
+  width:28px;height:28px;border-radius:var(--radius-md);
+  display:flex;align-items:center;justify-content:center;font-size:17px;
+  background:var(--green-50);color:var(--green-600);
+}
+.panel-head h3{font-size:18px;font-weight:700;color:var(--gray-800)}
+.panel-body{flex:1}
+
+/* ── SCHEDULE ITEMS ── */
+.sched-item{
+  padding:.7rem 1.1rem .7rem 2.5rem;
+  position:relative;
+}
+/* vertical timeline rail */
+.sched-item::before{
+  content:'';position:absolute;left:1.35rem;top:0;bottom:0;width:2px;
+  transform:translateX(-50%);background:var(--gray-200);
+}
+.sched-item:first-child::before{top:1.05rem;bottom:0}
+.sched-item:last-child::before{top:0;bottom:auto;height:1.05rem}
+.sched-item:only-child::before{display:none}
+/* node */
+.sched-item::after{
+  content:'';position:absolute;left:1.35rem;top:1.05rem;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--green-500);border:2px solid var(--gray-0);
+  box-shadow:0 0 0 2px var(--green-200);
+  transform:translate(-50%,-50%);z-index:1;
+}
+.sched-phase{
+  font-size:17px;font-weight:700;letter-spacing:.05em;
+  color:var(--green-700);text-transform:uppercase;margin-bottom:4px;
+}
+.sched-title{font-size:18px;font-weight:600;color:var(--gray-900);margin-bottom:5px;line-height:1.4}
+.sched-dates{display:flex;flex-direction:column;gap:4px}
+.sched-date-row{display:flex;align-items:baseline;gap:8px;font-size:17px}
+.sched-date-label{color:var(--gray-400);min-width:74px}
+.sched-date-val{
+  font-weight:700;font-size:17px;color:var(--gray-800);
+}
+/* 마감 계열만 강조 — 나머지는 중립 텍스트로 통일 */
+.date-open{color:var(--gray-800)}
+.date-close{color:var(--color-danger)}
+.date-final{color:var(--gray-800)}
+.date-pub{color:var(--gray-800)}
+.urgent-dot{
+  position:absolute;top:10px;right:10px;
+  width:7px;height:7px;border-radius:50%;background:var(--color-danger);
+  box-shadow:0 0 0 2px #FBE9E9;
+}
+
+/* ── DISCLOSURE ITEMS ── */
+.disc-item{padding:.7rem 1.1rem;border-bottom:1px solid var(--gray-100)}
+.disc-item:last-child{border-bottom:none}
+.disc-code{font-size:17px;font-weight:700;color:var(--green-700);margin-bottom:3px}
+.disc-title{font-size:18px;font-weight:600;color:var(--gray-900);margin-bottom:4px;line-height:1.45}
+.disc-meta{display:flex;gap:5px;flex-wrap:wrap}
+.disc-tag{
+  font-size:17px;font-weight:600;padding:2px 7px;border-radius:var(--radius-sm);
+}
+.dt-timing{background:var(--green-50);color:var(--green-700)}
+.dt-agency{background:var(--gray-100);color:var(--gray-600)}
+.dt-contact{background:var(--yellow-50);color:var(--yellow-700)}
+
+/* ── PROCEDURE ITEMS ── */
+.proc-item{
+  padding:.75rem 1.1rem;border-bottom:1px solid var(--gray-100);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.proc-item:last-child{border-bottom:none}
+.proc-num{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--green-600);color:#fff;
+  font-size:17px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+}
+.proc-body .proc-title{font-size:18px;font-weight:600;color:var(--gray-900);margin-bottom:2px}
+.proc-body .proc-desc{font-size:17px;color:var(--gray-600);line-height:1.5}
+.proc-body .proc-note{
+  font-size:17px;margin-top:4px;padding:5px 9px;border-radius:var(--radius-sm);
+  background:var(--yellow-50);color:var(--yellow-700);font-weight:500;line-height:1.45;
+  display:flex;gap:5px;align-items:flex-start;
+}
+.proc-body .proc-note .lc{margin-top:1px;flex-shrink:0}
+.proc-body .proc-sys{
+  font-size:17px;margin-top:5px;padding:4px 9px;border-radius:var(--radius-sm);
+  background:var(--green-50);color:var(--green-700);font-weight:600;
+  display:inline-flex;gap:5px;align-items:center;
+}
+
+/* ── CONTACT PANEL ── */
+.contact-box{
+  margin:1rem;padding:.85rem 1rem;border-radius:8px;
+  background:var(--gray-50);border:1px solid var(--gray-200);
+}
+.contact-box h4{font-size:17px;font-weight:700;color:var(--gray-600);margin-bottom:.5rem;letter-spacing:.04em}
+.contact-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid var(--gray-100)}
+.contact-row:last-child{border-bottom:none}
+.contact-name{font-size:17px;color:var(--gray-600)}
+.contact-tel{font-size:17px;font-weight:700;color:var(--green-700)}
+
+/* ── EMPTY ── */
+.empty-state{
+  background:var(--surface);border:1.5px dashed var(--gray-200);
+  border-radius:var(--radius);text-align:center;padding:3.5rem 2rem 4rem;
+  color:var(--gray-400);
+}
+.empty-state .ei{margin-bottom:1rem}
+.empty-state .ei img{height:120px;width:auto}
+.empty-state p{font-size:19px;font-weight:700;color:var(--gray-800)}
+.empty-state small{font-size:17px;display:block;margin-top:6px;color:var(--gray-500)}
+.empty-msg{padding:.75rem 1.1rem;font-size:17px;color:var(--gray-400);font-style:italic}
+
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="hd-inner">
+    <img class="hd-logo" src="../assets/logo/logomark-solid.png" alt="울산대학교 UOU">
+    <div class="hd-divider"></div>
+    <div>
+      <div class="hd-title">2026년 6월 대학정보공시 담당자 포털</div>
+      <div class="hd-sub">부서·담당자 선택 → 공시 일정·항목·업무절차 확인</div>
+    </div>
+    <div class="hd-badge">6월 공시</div>
+  </div>
+</header>
+
+<!-- TIMELINE BANNER -->
+<div class="timeline-wrap">
+  <div class="timeline-inner">
+    <div class="tl-label">6월 공시 전체 일정</div>
+    <div class="tl-steps">
+      <div class="tl-step done">
+        <div class="tl-dot"></div>
+        <div class="tl-date">5.27.(수)</div>
+        <div class="tl-name">직접입력 오픈<br>간접입력 연계 확인</div>
+      </div>
+      <div class="tl-step active">
+        <div class="tl-dot"></div>
+        <div class="tl-date">~6.4.(목) 11시</div>
+        <div class="tl-name">연계항목<br>수정 마감</div>
+      </div>
+      <div class="tl-step upcoming">
+        <div class="tl-dot"></div>
+        <div class="tl-date">6.9.(화) 17시</div>
+        <div class="tl-name">최종확인완료<br>1차</div>
+      </div>
+      <div class="tl-step upcoming">
+        <div class="tl-dot"></div>
+        <div class="tl-date">6.10.(수)</div>
+        <div class="tl-name">내부검증<br>3-가-1 오픈</div>
+      </div>
+      <div class="tl-step upcoming">
+        <div class="tl-dot"></div>
+        <div class="tl-date">~6.12.(금) 17시</div>
+        <div class="tl-name">3-가-1<br>연계 수정 마감</div>
+      </div>
+      <div class="tl-step upcoming">
+        <div class="tl-dot"></div>
+        <div class="tl-date">6.16.(월) 17시</div>
+        <div class="tl-name">최종확인완료<br>2차 (4년제)</div>
+      </div>
+      <div class="tl-step upcoming">
+        <div class="tl-dot"></div>
+        <div class="tl-date">6.11.~6.29.</div>
+        <div class="tl-name">예비공시<br>공문 제출</div>
+      </div>
+      <div class="tl-step upcoming">
+        <div class="tl-dot"></div>
+        <div class="tl-date">6.30.(화)</div>
+        <div class="tl-name">대국민<br>공시(예정)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- SELECTOR -->
+  <div class="sel-card">
+    <h2>담당자 조회</h2>
+    <div class="sel-row">
+      <div class="sel-group">
+        <label for="dept-sel"><span class="lc" data-lucide="folder"></span> 부서</label>
+        <select id="dept-sel"><option value="">— 부서를 선택하세요 —</option></select>
+      </div>
+      <div class="sel-group">
+        <label for="person-sel"><span class="lc" data-lucide="user"></span> 담당자</label>
+        <select id="person-sel" disabled><option value="">— 담당자를 선택하세요 —</option></select>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERSON CARD -->
+  <div id="person-card" class="person-card hidden">
+    <div class="avatar" id="av-init">—</div>
+    <div class="person-meta">
+      <h3 id="av-name">—</h3>
+      <p id="av-dept-txt">—</p>
+    </div>
+    <span class="person-dept" id="av-badge">—</span>
+  </div>
+
+  <!-- EMPTY -->
+  <div class="empty-state" id="empty-state">
+    <div class="ei"><img src="../assets/mascot/poses-2d/thinking.png" alt="울리니"></div>
+    <p>부서와 담당자를 선택해주세요</p>
+    <small>공시 일정 · 담당 공시 항목 · 단계별 업무 절차를 확인할 수 있습니다</small>
+  </div>
+
+  <!-- PANELS -->
+  <div class="panel-grid hidden" id="panel-grid">
+    <!-- 일정 -->
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ph-icon"><span class="lc" data-lucide="calendar-days"></span></div>
+        <h3>공시 일정</h3>
+      </div>
+      <div class="panel-body" id="sched-body"></div>
+    </div>
+    <!-- 공시 항목 -->
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ph-icon"><span class="lc" data-lucide="clipboard-list"></span></div>
+        <h3>담당 공시 항목</h3>
+      </div>
+      <div class="panel-body" id="disc-body"></div>
+    </div>
+    <!-- 업무 절차 -->
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ph-icon"><span class="lc" data-lucide="list-checks"></span></div>
+        <h3>업무 절차</h3>
+      </div>
+      <div class="panel-body" id="proc-body"></div>
+    </div>
+  </div>
+</main>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// 공통 업무 절차 (간접입력 항목 - 연계자료 확인형)
+// ═══════════════════════════════════════════════════════
+const PROC_INDIRECT = [
+  {
+    title:"연계자료 확인",
+    desc:"대학정보공시 입력시스템 접속 → 해당 공시장표에서 연계된 데이터 내용 확인",
+    sys:"대학정보공시 입력시스템"
+  },
+  {
+    title:"원자료 수정 필요 시 → 항목관리기관에 수정 요청",
+    desc:"데이터 오류 발견 시, 해당 항목관리기관에 직접 원자료 수정 요청 (이메일·전화)",
+    note:"⚠️ 수정 마감일 이전에 완료해야 함 (마감 전날까지 권장)"
+  },
+  {
+    title:"재연계 요청 작성",
+    desc:"항목관리기관에서 수정 완료 후, 대학정보공시 입력시스템 → 대학정보공시관리 → 접수 → [재연계요청] 메뉴에서 '추가' 클릭 후 등록",
+    note:"⚠️ 재연계 요청글 미작성 시 재연계 불가 / 재연계까지 2~3일 소요"
+  },
+  {
+    title:"재연계 완료 확인 (이메일·SMS 수신)",
+    desc:"재연계 완료 후 이메일·SMS 안내 수신 → 공시장표에서 수정 반영 여부 재확인"
+  },
+  {
+    title:"형식검증 실시",
+    desc:"입력시스템 → 대학정보공시관리 → 형식검증관리 → 형식검증 → '검증실시' 클릭 → 모든 항목 '정상(일치)' 확인",
+    note:"⚠️ 반드시 최종확인완료 전 '정상'으로 나와야 함. 수시로 재검증 필요"
+  },
+  {
+    title:"입력완료 클릭 (작성자)",
+    desc:"연계자료 확인 완료 후 '입력완료' 버튼 클릭 → 확인자에게 인계"
+  },
+  {
+    title:"확인완료 클릭 (확인자)",
+    desc:"확인자가 내용 검토 후 '확인완료' 버튼 클릭 → 총괄담당자에게 인계"
+  },
+  {
+    title:"최종확인완료 (총괄담당자)",
+    desc:"총괄담당자가 '최종확인완료' 클릭 → 1차: 6.9.(화) 17시 마감 / 2차(4년제 3-가-1): 6.16.(월) 17시 마감",
+    note:"⚠️ 최종확인완료 이후 수정 불가. 수정 필요 시 대국민 공시 이후 정정 요청"
+  },
+  {
+    title:"공문 작성 및 제출",
+    desc:"입력시스템 → 공시자료제출관리 → 공문작성 → 자료제출 → 총장 직인 공문파일 업로드 (6.11.~6.29. 예비공시 기간 내)",
+    sys:"대학정보공시 입력시스템 공문제출 메뉴"
+  }
+];
+
+// 직접입력 항목 절차
+const PROC_DIRECT = [
+  {
+    title:"자료 작성 및 입력",
+    desc:"대학정보공시 입력시스템 → 해당 공시장표 → 자료 직접 입력 후 '저장' 클릭",
+    sys:"대학정보공시 입력시스템"
+  },
+  {
+    title:"형식검증 실시",
+    desc:"입력시스템 → 형식검증관리 → '검증실시' 클릭 → 모든 항목 '정상' 확인",
+    note:"⚠️ 오류 발견 시 즉시 수정 후 재검증. 최종확인완료 전 반드시 '정상' 상태여야 함"
+  },
+  {
+    title:"전년대비 증감사유 입력",
+    desc:"'입력완료' 버튼 클릭 시 '전년대비증감확인' 팝업 생성 → 증감사유 입력 (5% 이상 차이 시 반드시 사유 기재) → '입력완료' 클릭"
+  },
+  {
+    title:"입력완료 클릭 (작성자)",
+    desc:"자료 입력 완료 후 '입력완료' 버튼 클릭 → 확인자에게 인계"
+  },
+  {
+    title:"확인완료 클릭 (확인자)",
+    desc:"확인자가 내용 검토 후 '확인완료' 버튼 클릭 → 총괄담당자에게 인계"
+  },
+  {
+    title:"최종확인완료 (총괄담당자)",
+    desc:"총괄담당자가 '최종확인완료' 클릭 → 마감: 6.9.(화) 17시",
+    note:"⚠️ 최종확인완료 이후 수정 불가. 해제 필요 시 '최종확인완료해제 접수' 게시판 이용"
+  },
+  {
+    title:"공문 작성 및 제출",
+    desc:"입력시스템 → 공시자료제출관리 → 공문작성 → 총장 직인 공문파일 업로드 (6.11.~6.29. 예비공시 기간 내)"
+  }
+];
+
+// ═══════════════════════════════════════════════════════
+// 담당자 DATA
+// ═══════════════════════════════════════════════════════
+const DATA = {
+
+  "입학관리팀": { members: [
+    { name:"정다영",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"입학전형·재학생 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        },
+        {
+          phase:"2차 오픈 (4년제)",
+          title:"신입생 모집요강 (3-가-1) 공시",
+          open:"2026.6.10.(수)",
+          modClose:"2026.6.12.(금) 17시",
+          finalClose:"2026.6.16.(월) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:true
+        }
+      ],
+      disclosures:[
+        {code:"3-가-1", title:"신입생 모집 요강", timing:"6월", agency:"한국대학교육협의회(입학기획팀)", contact:"02-6919-3835, 3834"},
+        {code:"3-나", title:"전임 입학사정관 현황", timing:"6월", agency:"한국대학교육협의회(입학지원·공정성팀)", contact:"02-6919-3897"},
+        {code:"3-다", title:"서류평가 담당 평가자 1인당 서류평가 건수", timing:"6월", agency:"한국대학교육협의회(입학지원·공정성팀)", contact:"02-6919-3897"},
+        {code:"4-가", title:"입학전형 유형별 선발 결과", timing:"6월", agency:"한국대학교육협의회(입학기획팀)", contact:"02-6919-3886"},
+        {code:"4-나", title:"기회 균형 선발 결과", timing:"6월", agency:"한국대학교육협의회(입학기획팀)", contact:"02-6919-3886"},
+        {code:"4-자", title:"신입생 출신 고등학교 유형별 현황", timing:"6월", agency:"한국대학교육협의회(입학지원·공정성팀)", contact:"02-6919-3897"},
+        {code:"4-다", title:"신입생 충원 현황", timing:"8월", agency:"한국교육개발원", contact:"-"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"ASSIST 대학입학전형 지원시스템 (http://assist.adiga.kr)"
+    }
+  ]},
+
+  "법인사무국": { members: [
+    { name:"이재희",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"예·결산(합산 재무제표) 및 법인회계 예산 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"8-라", title:"예·결산[합산 재무제표] 현황", timing:"6월(예산)/8월(결산)", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-마-1", title:"법인회계 자금예산서(예산)", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-마-5", title:"법인회계 적립금 운용계획서[PDF]", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-바-1", title:"교비회계 자금예산서(예산)", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-바-5", title:"교비회계 적립금 운용계획서[PDF]", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-마-2", title:"법인회계 자금예산서(결산)", timing:"8월", agency:"한국사학진흥재단", contact:"-"},
+        {code:"8-마-3", title:"운영(손익) 계산서", timing:"8월", agency:"한국사학진흥재단", contact:"-"},
+        {code:"8-마-4", title:"재무상태표", timing:"8월", agency:"한국사학진흥재단", contact:"-"},
+        {code:"바-1~바-2", title:"수익용 기본재산·법정부담금 현황", timing:"10월", agency:"한국사학진흥재단", contact:"-"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학재정정보시스템 (https://unifine.kasfo.or.kr)"
+    }
+  ]},
+
+  "예산팀": { members: [
+    { name:"이채훈",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"교비회계 자금예산서 및 적립금 운용계획서 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"8-바-1-(1)", title:"자금예산서(예산): 교비회계(통합)", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-바-1-(2)", title:"자금예산서(예산): 등록금회계", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-바-1-(2)-1", title:"자금예산서(예산): 잉여금처리 원칙", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-바-1-(3)", title:"자금예산서(예산): 비등록금회계", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"8-바-5", title:"교비회계 적립금 운용계획서", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3889"},
+        {code:"9-가-1", title:"등록금 산정근거", timing:"4월·수시", agency:"한국장학재단·직접입력", contact:"-"},
+        {code:"9-가-2", title:"등록금심의위원회 회의록", timing:"4월·수시", agency:"한국장학재단·직접입력", contact:"-"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학재정정보시스템 (https://unifine.kasfo.or.kr)"
+    },
+    { name:"안태준",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"산학협력단 현금예산서(예산) 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"8-자-1", title:"산학협력단회계 현금예산서(예산)", timing:"6월", agency:"한국사학진흥재단(재정통계분석부)", contact:"02-6919-3884"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학재정정보시스템 (https://unifine.kasfo.or.kr)"
+    }
+  ]},
+
+  "교수학습개발팀": { members: [
+    { name:"박찬우",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"대학의 원격강좌 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-바", title:"대학의 원격강좌 현황", timing:"6월", agency:"한국교육학술정보원(고등평생교육부)", contact:"02-6919-3883"},
+        {code:"나-3", title:"대학 강의 공개 현황", timing:"8월", agency:"국가평생교육진흥원·한국교육개발원", contact:"-"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"원격강의현황조사시스템 (www.kocw.net/home/elc/login.do)"
+    }
+  ]},
+
+  "교무팀": { members: [
+    { name:"박건희",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"산학협력 친화형 교원·산업체 경력 전임교원 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-사", title:"산학협력 친화형 교원 인사 운영 현황[PDF]", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3895"},
+        {code:"12-아", title:"산업체 경력 전임교원 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3895"},
+        {code:"6-가-1", title:"전체 교원 대비 전임교원 현황", timing:"8월", agency:"한국교육개발원", contact:"-"},
+        {code:"6-가-2", title:"전체 신규 전임교원 현황", timing:"8월", agency:"한국교육개발원", contact:"-"},
+        {code:"6-나-1-(1)", title:"전임교원 1인당 학생 수 및 전임교원 확보율", timing:"8월", agency:"한국교육개발원", contact:"-"},
+        {code:"6-다-1", title:"국가별 외국인 전임교원 현황", timing:"8월", agency:"한국교육개발원", contact:"-"},
+        {code:"6-다-2", title:"전공계열별 외국인 전임교원 현황", timing:"8월", agency:"한국교육개발원", contact:"-"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    }
+  ]},
+
+  "공동기기센터": { members: [
+    { name:"이유림",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"공동활용 연구장비 운영 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-차", title:"공동활용 연구장비 운영 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3895"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    }
+  ]},
+
+  "RISE사업단 총괄행정지원팀": { members: [
+    { name:"이민혜",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"현장실습 운영 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-카-1", title:"현장실습 운영 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3887",
+         note:"기타(소속학과 없음) 학과는 시스템상 단과대구분없음·인문사회계열·주야간구분없음으로 표기됨 / 최소·최대학점 합계 및 실습기관수 합계는 '-'로 표기"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    }
+  ]},
+
+  "RISE사업단 (융합인재양성센터)": { members: [
+    { name:"최지우",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"캡스톤 디자인(창의적 설계) 운영 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-카-2", title:"캡스톤 디자인(창의적 설계) 운영 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3887"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    }
+  ]},
+
+  "산학협력팀": { members: [
+    { name:"박정욱",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"학교기업·주문식 교육과정 운영 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-카-3", title:"학교기업 운영 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3887"},
+        {code:"12-카-4-(2)", title:"주문식 교육과정 설치 운영 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3887",
+         note:"학부 및 대학원 현황을 하나의 장표에서 입력 → 공시시스템에서 학부/대학원 장표에 각각 연계. 입력 시 학교정보 확인 필요"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    },
+    { name:"김수련",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"기술이전 수입료 및 계약 실적 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-타", title:"기술이전 수입료 및 계약 실적", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3882"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    },
+    { name:"정재훈",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"특허 출원 및 등록 실적 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-파", title:"특허 출원 및 등록 실적", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3882"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    },
+    { name:"서지운",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"교원의 창업 및 창업지원 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-하-1-(1)", title:"교원의 창업 및 창업지원 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3882"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    },
+    { name:"박성용",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"기술지주회사 운영 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-거", title:"기술지주회사 운영 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3882"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    }
+  ]},
+
+  "기획평가팀": { members: [
+    { name:"이태호",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"계약학과 및 계약정원제 설치 운영 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-카-4-(1)", title:"계약학과 및 계약정원제 설치 운영 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3887",
+         note:"학부 및 대학원 현황을 하나의 장표에서 입력 → 공시시스템에서 학부/대학원 장표에 각각 연계됨. 입력 시 학교정보 확인 필요"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    }
+  ]},
+
+  "RISE사업단 (창업새싹이음센터)": { members: [
+    { name:"문성희",
+      schedule:[
+        {
+          phase:"1차 오픈",
+          title:"학생 창업·창업교육 지원 현황 공시",
+          open:"2025.5.27.(수)",
+          modClose:"2026.6.4.(목) 11시",
+          finalClose:"2026.6.9.(화) 17시",
+          pubDate:"2026.6.30.(화)",
+          urgent:false
+        }
+      ],
+      disclosures:[
+        {code:"12-하-1-(2)", title:"학생의 창업 및 창업지원 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3882"},
+        {code:"12-하-2", title:"창업교육 지원 현황", timing:"6월", agency:"한국연구재단(산학협력기반팀)", contact:"02-6919-3882"}
+      ],
+      procedures: PROC_INDIRECT,
+      sys:"대학 산학협력활동 실태조사 시스템 (http://www.uicc.re.kr)"
+    }
+  ]}
+
+};
+
+// ── DOM ──────────────────────────────────────────────
+const deptSel    = document.getElementById('dept-sel');
+const personSel  = document.getElementById('person-sel');
+const personCard = document.getElementById('person-card');
+const emptyState = document.getElementById('empty-state');
+const panelGrid  = document.getElementById('panel-grid');
+const schedBody  = document.getElementById('sched-body');
+const discBody   = document.getElementById('disc-body');
+const procBody   = document.getElementById('proc-body');
+
+Object.keys(DATA).forEach(d => {
+  const o = document.createElement('option');
+  o.value = d; o.textContent = d; deptSel.appendChild(o);
+});
+
+deptSel.addEventListener('change', () => {
+  const dept = deptSel.value;
+  personSel.innerHTML = '<option value="">— 담당자를 선택하세요 —</option>';
+  personSel.disabled = !dept;
+  hide();
+  if (!dept) return;
+  DATA[dept].members.forEach((m,i) => {
+    const o = document.createElement('option');
+    o.value = i; o.textContent = m.name; personSel.appendChild(o);
+  });
+});
+
+personSel.addEventListener('change', () => {
+  const dept = deptSel.value;
+  const idx = personSel.value;
+  if (!dept || idx === '') { hide(); return; }
+  show(DATA[dept].members[parseInt(idx)], dept);
+});
+
+function hide() {
+  personCard.classList.add('hidden');
+  panelGrid.classList.add('hidden');
+  emptyState.classList.remove('hidden');
+}
+
+function show(m, dept) {
+  emptyState.classList.add('hidden');
+  personCard.classList.remove('hidden');
+  panelGrid.classList.remove('hidden');
+
+  document.getElementById('av-init').textContent = m.name.slice(0,2);
+  document.getElementById('av-name').textContent = m.name;
+  document.getElementById('av-dept-txt').textContent = dept;
+  document.getElementById('av-badge').textContent = dept;
+
+  // 일정
+  schedBody.innerHTML = m.schedule.map(s => `
+    <div class="sched-item">
+      ${s.urgent ? '<div class="urgent-dot"></div>' : ''}
+      <div class="sched-phase">${s.phase}</div>
+      <div class="sched-title">${s.title}</div>
+      <div class="sched-dates">
+        <div class="sched-date-row">
+          <span class="sched-date-label">오픈</span>
+          <span class="sched-date-val date-open">${s.open}</span>
+        </div>
+        <div class="sched-date-row">
+          <span class="sched-date-label">수정마감</span>
+          <span class="sched-date-val date-close">${s.modClose}</span>
+        </div>
+        <div class="sched-date-row">
+          <span class="sched-date-label">최종확인</span>
+          <span class="sched-date-val date-final">${s.finalClose}</span>
+        </div>
+        <div class="sched-date-row">
+          <span class="sched-date-label">대국민공시</span>
+          <span class="sched-date-val date-pub">${s.pubDate}</span>
+        </div>
+      </div>
+    </div>`).join('');
+
+  // 공시 항목
+  discBody.innerHTML = m.disclosures.map(d => `
+    <div class="disc-item">
+      <div class="disc-code">${d.code}</div>
+      <div class="disc-title">${d.title}</div>
+      <div class="disc-meta">
+        <span class="disc-tag dt-agency">${d.agency}</span>
+      </div>
+      ${d.note ? `<div style="margin-top:6px;font-size:17px;color:var(--yellow-700);background:var(--yellow-50);padding:5px 9px;border-radius:var(--radius-sm);line-height:1.5">${d.note}</div>` : ''}
+    </div>`).join('');
+
+  // 업무 절차 + 시스템 안내 (8,9번 총괄담당자 단계 제외)
+  procBody.innerHTML =
+    (m.sys ? `<div style="margin:10px 12px 0;padding:8px 11px;background:var(--green-50);border-radius:var(--radius-md);font-size:17px;font-weight:600;color:var(--green-800);display:flex;gap:6px;align-items:center;line-height:1.4"><span class="lc" data-lucide="monitor" style="font-size:13px"></span>원자료 조사 시스템: ${m.sys}</div>` : '') +
+    m.procedures.slice(0,7).map((p,i) => `
+      <div class="proc-item">
+        <div class="proc-num">${i+1}</div>
+        <div class="proc-body">
+          <div class="proc-title">${p.title}</div>
+          <div class="proc-desc">${p.desc}</div>
+          ${p.note ? `<div class="proc-note"><span class="lc" data-lucide="triangle-alert" style="font-size:12px"></span><span>${p.note.replace(/^⚠️?\s*/,'')}</span></div>` : ''}
+          ${p.sys ? `<span class="proc-sys"><span class="lc" data-lucide="monitor" style="font-size:12px"></span>${p.sys}</span>` : ''}
+        </div>
+      </div>`).join('') +
+    `<div style="margin:8px 12px 12px;padding:9px 11px;background:var(--green-50);border:1px solid var(--green-100);border-radius:var(--radius-md);font-size:17px;color:var(--green-800);line-height:1.6;display:flex;gap:6px;align-items:flex-start">
+      <span class="lc" data-lucide="phone" style="font-size:13px;margin-top:1px"></span>
+      <span><b>문의처</b><br>기획평가팀 손민지 (052-259-1166)</span>
+    </div>`;
+
+  if (window.lucide) window.lucide.createIcons();
+}
+
+// 정적 아이콘(라벨·패널 헤드) 초기 렌더
+if (window.lucide) window.lucide.createIcons();
+</script>
+</body>
+</html>

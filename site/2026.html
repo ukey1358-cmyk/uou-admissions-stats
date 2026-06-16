@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026학년도 수시모집 통계 · UOU 입시통계</title>
+  <link rel="icon" type="image/gif" href="assets/img/uou_sm_02.gif" />
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="brand">
+      <img src="assets/img/uou_sm_02.gif" alt="UOU" class="brand-mark" />
+      <span class="brand-text">
+        <span class="ko">울산대학교 입시통계</span>
+        <span class="en">University of Ulsan · Admissions Statistics</span>
+      </span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+    <nav class="primary" id="primary-nav">
+      <a href="2026.html" class="active">2026 수시</a>
+      <a href="2025.html">2025 입시결과</a>
+      <a href="compare.html">비교</a>
+    </nav>
+  </header>
+
+  <div class="section-strip">
+    <span class="label">2026학년도 수시모집 통계 <span class="badge-yellow">NEW</span></span>
+    <span class="meta">대분류 4 · 표 92개</span>
+  </div>
+
+  <div class="year-layout">
+    <aside class="sidebar">
+      <input type="search" class="search-input" id="search-input"
+             placeholder="모집단위·표 검색…" />
+      <ul class="tree" id="tree-root"></ul>
+    </aside>
+
+    <section class="content" id="content-root">
+      <div id="placeholder">
+        <svg class="empty-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="14" y="22" width="92" height="76" rx="6"/>
+          <path d="M14 40h92"/>
+          <path d="M40 22v76M76 22v76"/>
+          <circle cx="92" cy="68" r="14"/>
+          <path d="M102 78l10 10"/>
+        </svg>
+        <p class="empty-title">표를 선택해 주세요</p>
+        <p class="empty-hint">좌측 사이드바에서 모집단위·전형 표를 클릭하면 이곳에 표와 차트가 표시됩니다.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="wordmark-block">
+        <img src="assets/img/uou_sm_02.gif" alt="UOU" class="wordmark-mark" />
+        <span class="wordmark-text">
+          <span class="ko">울산대학교</span>
+          <span class="en">University of Ulsan</span>
+        </span>
+      </div>
+      <div class="meta">
+        데이터 기준일: 2026-05-06 · 담당: 입학관리팀 · 내부용<br/>
+        © University of Ulsan — Admissions Statistics Portal
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/table-renderer.js"></script>
+  <script src="assets/js/chart-renderer.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    App.init({
+      year: 2026,
+      indexUrl: '../data/2026/index.json',
+      dataDir:  '../data/2026/'
+    });
+  </script>
+</body>
+</html>

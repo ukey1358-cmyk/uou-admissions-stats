@@ -1,0 +1,27 @@
+# Original Korean office files (kept locally, not pushed)
+*.hwp
+*.hwpx
+*.xlsx
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Build logs / temp
+build.log
+*.log
+.tmp/
+
+# OS / Editor
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+.idea/
+
+# OneDrive lock files
+~$*

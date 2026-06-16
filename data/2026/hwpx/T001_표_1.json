@@ -1,0 +1,27 @@
+{
+  "id": "Z-001",
+  "year": 2026,
+  "category": "미분류",
+  "subcategory": "",
+  "title": "표 1",
+  "subtitle": null,
+  "headers": [
+    "",
+    "2026학년도 수시 모집 지원 현황",
+    "2026학년도 수시 모집 지원 현황"
+  ],
+  "rows": [],
+  "totals": null,
+  "chart_hint": "bar_simple",
+  "meta": {
+    "source_file": "2026학년도 수시모집 통계작업.hwpx",
+    "table_index": 1,
+    "row_count": 3,
+    "col_count": 3,
+    "caption": "",
+    "header_rows_detected": 3,
+    "updated_at": "2026-05-06",
+    "status": "auto-extracted",
+    "note": "hwpx_to_json.py 자동 변환. 헤더 행 수는 자동 감지(숫자 비율 기반). 오감지 가능성 있음."
+  }
+}

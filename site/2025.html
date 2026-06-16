@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025학년도 입시결과 · UOU 입시통계</title>
+  <link rel="icon" type="image/gif" href="assets/img/uou_sm_02.gif" />
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="brand">
+      <img src="assets/img/uou_sm_02.gif" alt="UOU" class="brand-mark" />
+      <span class="brand-text">
+        <span class="ko">울산대학교 입시통계</span>
+        <span class="en">University of Ulsan · Admissions Statistics</span>
+      </span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+    <nav class="primary" id="primary-nav">
+      <a href="2026.html">2026 수시</a>
+      <a href="2025.html" class="active">2025 입시결과</a>
+      <a href="compare.html">비교</a>
+    </nav>
+  </header>
+
+  <div class="section-strip">
+    <span class="label">2025학년도 입시결과</span>
+    <span class="meta">석차등급 분포 · 추가 표는 .hwp 변환 후 채워집니다</span>
+  </div>
+
+  <div class="year-layout">
+    <aside class="sidebar">
+      <input type="search" class="search-input" id="search-input"
+             placeholder="모집단위·표 검색…" />
+      <ul class="tree" id="tree-root"></ul>
+    </aside>
+
+    <section class="content" id="content-root">
+      <div id="placeholder">
+        <svg class="empty-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M30 18h44l16 16v62a6 6 0 0 1-6 6H30a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z"/>
+          <path d="M74 18v16h16"/>
+          <path d="M40 60h40M40 72h40M40 84h28"/>
+        </svg>
+        <p class="empty-title">2025 등록자 석차등급 분포 1차 변환 완료</p>
+        <p class="empty-hint">좌측 사이드바에서 표를 선택하세요. 나머지 항목은 <code>2025학년도 입시결과 통계_작업중.hwp</code> 변환 후 채워집니다.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="wordmark-block">
+        <img src="assets/img/uou_sm_02.gif" alt="UOU" class="wordmark-mark" />
+        <span class="wordmark-text">
+          <span class="ko">울산대학교</span>
+          <span class="en">University of Ulsan</span>
+        </span>
+      </div>
+      <div class="meta">
+        데이터 기준일: 2026-05-06 · 담당: 입학관리팀 · 내부용<br/>
+        © University of Ulsan — Admissions Statistics Portal
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/table-renderer.js"></script>
+  <script src="assets/js/chart-renderer.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    App.init({ year: 2025, indexUrl: '../data/2025/index.json', dataDir: '../data/2025/' });
+  </script>
+</body>
+</html>

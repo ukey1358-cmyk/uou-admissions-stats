@@ -1,0 +1,26 @@
+{
+  "year": 2025,
+  "generated_at": "2026-05-06",
+  "status": "partial",
+  "note": "2025학년도 입시결과 통계_작업중.hwp 변환 후 채워집니다.",
+  "categories": [
+    {
+      "id": "I",
+      "title": "I. 수시 모집 지원 현황",
+      "subcategories": [
+        {
+          "id": "I-3",
+          "title": "3. 학생부 석차등급 분포",
+          "tables": [
+            {
+              "id": "I-3-01",
+              "title": "지역교과 모집단위별 석차등급 분포(2025 등록자)",
+              "file": "I-3-01_석차등급분포.json",
+              "status": "final"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

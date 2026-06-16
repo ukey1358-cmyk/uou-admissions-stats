@@ -1,0 +1,12 @@
+/* ==========================================================================
+   UOU Design System — Global entry point
+   Consumers link THIS file. It is a list of @import lines only.
+   University of Ulsan · 진리 · 자주 · 봉사 · est. 1970
+   ========================================================================== */
+
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/mascot.css";
+@import "./tokens/base.css";

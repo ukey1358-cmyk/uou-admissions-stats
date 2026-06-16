@@ -1,0 +1,6 @@
+# 입시통계 웹페이지 변환 파이프라인 의존성
+# 사용: pip install -r requirements.txt
+
+openpyxl>=3.1.2          # XLSX 파싱
+beautifulsoup4>=4.12.0   # HTML/XML 파싱 (HWP→HTML 경로)
+lxml>=4.9.0              # 빠른 XML 파서 (HWPX 내부 OWPML 처리)

@@ -1,0 +1,76 @@
+/* ==========================================================================
+   UOU Design System — Color Tokens
+   Source: 울산대학교 공식 CI/UI 매뉴얼 (전용색상 규정)
+   별색(DIC)을 스크린용 RGB로 변환한 근사값.
+   ========================================================================== */
+
+:root {
+  /* --- Brand (전용색상) --------------------------------------------------- */
+  --uou-green:  #009A44;  /* 주색  · DIC 643 · C100 Y100 */
+  --uou-gray:   #333333;  /* 보조  · DIC 654 · K80 */
+  --uou-yellow: #CC9900;  /* 보조  · DIC 207 · C20 M40 Y100 */
+
+  /* --- Primary · Green scale ---------------------------------------------- */
+  --green-50:  #E6F5EC;
+  --green-100: #C2E8D2;
+  --green-200: #8FD4AC;
+  --green-300: #5BBF85;
+  --green-400: #2EAE64;
+  --green-500: #009A44;  /* Primary / 기본 액션 */
+  --green-600: #00873B;  /* hover / pressed */
+  --green-700: #006E30;  /* 텍스트 강조, 진한 보더 */
+  --green-800: #005625;
+  --green-900: #003D1A;
+
+  /* --- Neutral · Gray scale (UOU Gray = 800 앵커) ------------------------- */
+  --gray-0:   #FFFFFF;
+  --gray-50:  #F7F8F8;
+  --gray-100: #EFF0F1;
+  --gray-200: #DCDEE0;
+  --gray-300: #C2C5C8;
+  --gray-400: #9A9EA3;
+  --gray-500: #71767B;
+  --gray-600: #565B60;
+  --gray-700: #3F4348;
+  --gray-800: #333333;  /* 본문 기본 텍스트 (UOU Gray) */
+  --gray-900: #1C1E20;  /* 제목 텍스트 */
+
+  /* --- Accent · Yellow scale --------------------------------------------- */
+  --yellow-50:  #FBF3DE;
+  --yellow-100: #F5E2B0;
+  --yellow-300: #E3C25C;
+  --yellow-500: #CC9900;  /* Accent / 강조 */
+  --yellow-700: #A67A00;  /* 옐로우 배경 위 텍스트 */
+
+  /* --- Semantic ----------------------------------------------------------- */
+  --color-success: #009A44;  /* 브랜드 그린 재사용 */
+  --color-info:    #2563EB;
+  --color-warning: #CC9900;
+  --color-danger:  #D32F2F;
+
+  /* --- Semantic surface / text aliases ----------------------------------- */
+  --surface-page:    var(--gray-0);
+  --surface-section: var(--gray-50);
+  --surface-card:    var(--gray-0);
+  --surface-sunken:  var(--gray-100);
+  --surface-footer:  var(--gray-800);
+
+  --border-default:  var(--gray-200);
+  --border-strong:   var(--gray-300);
+  --border-input:    var(--gray-300);
+
+  --text-strong:     var(--gray-900);  /* 제목 */
+  --text-body-color: var(--gray-800);  /* 본문 */
+  --text-muted:      var(--gray-600);  /* 본문 보조 */
+  --text-subtle:     var(--gray-500);  /* 보조 텍스트 */
+  --text-placeholder:var(--gray-400);
+  --text-on-brand:   var(--gray-0);    /* 그린 배경 위 텍스트 */
+
+  --action-primary:        var(--green-500);
+  --action-primary-hover:  var(--green-600);
+  --action-primary-active: var(--green-700);
+  --link-color:            var(--green-700);
+  --link-hover:            var(--green-500);
+  --link-visited:          var(--green-800);
+  --focus-ring:            0 0 0 3px rgba(0, 154, 68, 0.15);
+}

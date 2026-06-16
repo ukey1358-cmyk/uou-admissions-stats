@@ -1,0 +1,1319 @@
+{
+  "year": 2026,
+  "generated_at": "2026-05-06",
+  "status": "auto-extracted",
+  "source": {
+    "hwpx": "2026학년도 수시모집 통계작업.hwpx",
+    "hwpx_total_tables": 90,
+    "xlsx_external": [
+      "IV-1-01_최종등록.json",
+      "I-3-01_석차등급분포.json"
+    ],
+    "category_map": "schema\\category_map_2026.json"
+  },
+  "note": "4단계 트리(대분류 → 중분류 → 소분류 → 표)는 schema/category_map_2026.json 기준 — 표 배치 변경 시 해당 파일만 수정 후 build_index.py 재실행.",
+  "categories": [
+    {
+      "id": "I",
+      "title": "I. 수시 모집 지원 현황",
+      "subcategories": [
+        {
+          "id": "I-1",
+          "title": "1. 지원 현황 총괄",
+          "groups": [
+            {
+              "id": "I-1-1",
+              "title": "1.1 전체 지원 현황",
+              "tables": [
+                {
+                  "id": "T002",
+                  "index": 2,
+                  "title": "전체 지원 현황(정원내/정원외 모두 포함)",
+                  "file": "hwpx/T002_□_전체_지원_현황(정원내정원외_모두_포함).json",
+                  "status": "auto-extracted",
+                  "shape": "20×8"
+                }
+              ]
+            },
+            {
+              "id": "I-1-2",
+              "title": "1.2 정원 내 지원",
+              "tables": [
+                {
+                  "id": "T009",
+                  "index": 9,
+                  "title": "정원 내 지원 현황",
+                  "file": "hwpx/T009_□_정원_내_지원_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "20×8"
+                }
+              ]
+            },
+            {
+              "id": "I-1-3",
+              "title": "1.3 정원 외 지원",
+              "tables": [
+                {
+                  "id": "T011",
+                  "index": 11,
+                  "title": "정원 외 지원 현황",
+                  "file": "hwpx/T011_□_정원_외_지원_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "16×8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-2",
+          "title": "2. 전형유형별 지원 현황",
+          "groups": [
+            {
+              "id": "I-2-1",
+              "title": "2.1 일반교과 지원 현황",
+              "tables": [
+                {
+                  "id": "T013",
+                  "index": 13,
+                  "title": "일반교과",
+                  "file": "hwpx/T013_□_일반교과.json",
+                  "status": "auto-extracted",
+                  "shape": "17×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-2",
+              "title": "2.2 지역교과 지원 현황",
+              "tables": [
+                {
+                  "id": "T015",
+                  "index": 15,
+                  "title": "지역교과",
+                  "file": "hwpx/T015_□_지역교과.json",
+                  "status": "auto-extracted",
+                  "shape": "17×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-3",
+              "title": "2.3 잠재역량 지원 현황",
+              "tables": [
+                {
+                  "id": "T017",
+                  "index": 17,
+                  "title": "잠재역량",
+                  "file": "hwpx/T017_□_잠재역량.json",
+                  "status": "auto-extracted",
+                  "shape": "17×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-4",
+              "title": "2.4 지역인재 지원 현황",
+              "tables": [
+                {
+                  "id": "T019",
+                  "index": 19,
+                  "title": "지역인재",
+                  "file": "hwpx/T019_□_지역인재.json",
+                  "status": "auto-extracted",
+                  "shape": "17×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-5",
+              "title": "2.5 지역인재(기초·차상위) 특별전형",
+              "tables": [
+                {
+                  "id": "T023",
+                  "index": 23,
+                  "title": "지역인재(기초생활/차상위) 특별전형",
+                  "file": "hwpx/T023_□_지역인재(기초생활차상위)_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "5×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-6",
+              "title": "2.6 기회균형 특별전형",
+              "tables": [
+                {
+                  "id": "T024",
+                  "index": 24,
+                  "title": "기회균형 특별전형",
+                  "file": "hwpx/T024_□_기회균형_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "14×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-7",
+              "title": "2.7 예체능 전형",
+              "tables": [
+                {
+                  "id": "T025",
+                  "index": 25,
+                  "title": "예체능 전형",
+                  "file": "hwpx/T025_□_예체능_전형.json",
+                  "status": "auto-extracted",
+                  "shape": "7×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-8",
+              "title": "2.8 특기자 특별전형",
+              "tables": [
+                {
+                  "id": "T026",
+                  "index": 26,
+                  "title": "특기자 특별전형",
+                  "file": "hwpx/T026_□_특기자_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "10×9"
+                }
+              ]
+            },
+            {
+              "id": "I-2-9",
+              "title": "2.9 경기실적 우수자 특별전형",
+              "tables": [
+                {
+                  "id": "T027",
+                  "index": 27,
+                  "title": "경기실적 우수자 특별전형",
+                  "file": "hwpx/T027_□_경기실적_우수자_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                }
+              ]
+            },
+            {
+              "id": "I-2-10",
+              "title": "2.10 일반교과 지원자 성적",
+              "tables": [
+                {
+                  "id": "T014",
+                  "index": 14,
+                  "title": "일반교과 지원자 학생부 교과 성적(학생부 석차등급)",
+                  "file": "hwpx/T014_□_일반교과_지원자_학생부_교과_성적(학생부_석차등급).json",
+                  "status": "auto-extracted",
+                  "shape": "16×9"
+                }
+              ]
+            },
+            {
+              "id": "I-2-11",
+              "title": "2.11 지역교과 지원자 성적",
+              "tables": [
+                {
+                  "id": "T016",
+                  "index": 16,
+                  "title": "지역교과 지원자 학생부 교과 성적(학생부 석차등급)",
+                  "file": "hwpx/T016_□_지역교과_지원자_학생부_교과_성적(학생부_석차등급).json",
+                  "status": "auto-extracted",
+                  "shape": "16×9"
+                }
+              ]
+            },
+            {
+              "id": "I-2-12",
+              "title": "2.12 잠재역량 전형 추가 분석",
+              "tables": [
+                {
+                  "id": "T018",
+                  "index": 18,
+                  "title": "잠재역량 전형 추가 분석통계(의예과, 간호학과, 자율전공학부 제외)",
+                  "file": "hwpx/T018_□_잠재역량_전형_추가_분석통계(의예과,_간호학과,_자.json",
+                  "status": "auto-extracted",
+                  "shape": "14×8"
+                }
+              ]
+            },
+            {
+              "id": "I-2-13",
+              "title": "2.13 2026학년도 주요 4개 전형 분석",
+              "tables": [
+                {
+                  "id": "T020",
+                  "index": 20,
+                  "title": "2026학년도 주요 4개 전형 분석(의예과, 간호학과, 자율전공학부 제외)",
+                  "file": "hwpx/T020_□_2026학년도_주요_4개_전형_분석(의예과,_간호학.json",
+                  "status": "auto-extracted",
+                  "shape": "14×13"
+                }
+              ]
+            },
+            {
+              "id": "I-2-14",
+              "title": "2.14 전형별 지원율 비교 (요약)",
+              "tables": [
+                {
+                  "id": "T021",
+                  "index": 21,
+                  "title": "- 전형별 지원율은 지역교과(4.48) > 일반교과(4.37) > 지역인재(4.17) > 잠재역량(3.52) 순으로 전년도와 달리 지역교과가 가장 높은 경쟁률 기록",
+                  "file": "hwpx/T021_-_전형별_지원율은_지역교과(4.48)_일반교과(4.3.json",
+                  "status": "auto-extracted",
+                  "shape": "5×5"
+                }
+              ]
+            },
+            {
+              "id": "I-2-15",
+              "title": "2.15 2025학년도 주요 4개 전형 분석",
+              "tables": [
+                {
+                  "id": "T022",
+                  "index": 22,
+                  "title": "2025학년도 주요 4개 전형 분석(의예과, 간호학과, 자율전공학부)",
+                  "file": "hwpx/T022_□_2025학년도_주요_4개_전형_분석(의예과,_간호학.json",
+                  "status": "auto-extracted",
+                  "shape": "5×13"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-3",
+          "title": "3. 지원율 상승·하락 모집단위",
+          "groups": [
+            {
+              "id": "I-3-1",
+              "title": "3.1 상위·하위 5개",
+              "tables": [
+                {
+                  "id": "T003",
+                  "index": 3,
+                  "title": "2026학년도 상위 및 하위 5개 모집단위",
+                  "file": "hwpx/T003_◦2026학년도_상위_및_하위_5개_모집단위.json",
+                  "status": "auto-extracted",
+                  "shape": "7×10"
+                }
+              ]
+            },
+            {
+              "id": "I-3-2",
+              "title": "3.2 전년 대비 증감 (전체)",
+              "tables": [
+                {
+                  "id": "T004",
+                  "index": 4,
+                  "title": "2025학년도 대비 지원율 상승 및 하락 5개 모집단위",
+                  "file": "hwpx/T004_◦2025학년도_대비_지원율_상승_및_하락_5개_모집단.json",
+                  "status": "auto-extracted",
+                  "shape": "7×10"
+                }
+              ]
+            },
+            {
+              "id": "I-3-3",
+              "title": "3.3 전년 대비 증감 (정원 내)",
+              "tables": [
+                {
+                  "id": "T010",
+                  "index": 10,
+                  "title": "[참고] 2025학년도 대비 지원율 상승 및 하락 5개 모집단위(정원 내)",
+                  "file": "hwpx/T010_[참고]_2025학년도_대비_지원율_상승_및_하락_5개.json",
+                  "status": "auto-extracted",
+                  "shape": "7×10"
+                }
+              ]
+            },
+            {
+              "id": "I-3-4",
+              "title": "3.4 전년 대비 증감 (정원 외)",
+              "tables": [
+                {
+                  "id": "T012",
+                  "index": 12,
+                  "title": "[참고] 2025학년도 대비 지원율 상승 및 하락 5개 모집단위(정원 외)",
+                  "file": "hwpx/T012_[참고]_2025학년도_대비_지원율_상승_및_하락_5개.json",
+                  "status": "auto-extracted",
+                  "shape": "7×10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-4",
+          "title": "4. 지원 횟수·중복 지원",
+          "groups": [
+            {
+              "id": "I-4-1",
+              "title": "4.1 지원 횟수별 현황",
+              "tables": [
+                {
+                  "id": "T005",
+                  "index": 5,
+                  "title": "지원 횟수별 현황 및 실제 지원자 수",
+                  "file": "hwpx/T005_◦지원_횟수별_현황_및_실제_지원자_수.json",
+                  "status": "auto-extracted",
+                  "shape": "9×7"
+                }
+              ]
+            },
+            {
+              "id": "I-4-2",
+              "title": "4.2 중복 지원 조합",
+              "tables": [
+                {
+                  "id": "T006",
+                  "index": 6,
+                  "title": "2회 중복 지원자 1,444명의 전형 조합 분석",
+                  "file": "hwpx/T006_◦2회_중복_지원자_1,444명의_전형_조합_분석.json",
+                  "status": "auto-extracted",
+                  "shape": "8×4"
+                },
+                {
+                  "id": "T007",
+                  "index": 7,
+                  "title": "3회 중복 지원자 469명의 전형 조합 분석",
+                  "file": "hwpx/T007_◦3회_중복_지원자_469명의_전형_조합_분석.json",
+                  "status": "auto-extracted",
+                  "shape": "8×4"
+                },
+                {
+                  "id": "T008",
+                  "index": 8,
+                  "title": "4회 중복 지원자 210명의 전형 조합 분석",
+                  "file": "hwpx/T008_◦4회_중복_지원자_210명의_전형_조합_분석.json",
+                  "status": "auto-extracted",
+                  "shape": "8×4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-5",
+          "title": "5. 특별전형 (정원 외)",
+          "groups": [
+            {
+              "id": "I-5-1",
+              "title": "5.1 농어촌",
+              "tables": [
+                {
+                  "id": "T028",
+                  "index": 28,
+                  "title": "농어촌 특별전형(정원 외)",
+                  "file": "hwpx/T028_□_농어촌_특별전형(정원_외).json",
+                  "status": "auto-extracted",
+                  "shape": "16×8"
+                },
+                {
+                  "id": "T029",
+                  "index": 29,
+                  "title": "[참고] 농어촌 특별전형 지원율 상위 5개 및 하위 5개 모집단위",
+                  "file": "hwpx/T029_[참고]_농어촌_특별전형_지원율_상위_5개_및_하위_5.json",
+                  "status": "auto-extracted",
+                  "shape": "7×10"
+                }
+              ]
+            },
+            {
+              "id": "I-5-2",
+              "title": "5.2 기초생활·차상위",
+              "tables": [
+                {
+                  "id": "T030",
+                  "index": 30,
+                  "title": "기초생활수급자 및 차상위계층 특별전형(정원 외)",
+                  "file": "hwpx/T030_□_기초생활수급자_및_차상위계층_특별전형(정원_외).json",
+                  "status": "auto-extracted",
+                  "shape": "14×8"
+                },
+                {
+                  "id": "T031",
+                  "index": 31,
+                  "title": "[참고] 기초생활수급자 및 차상위계층 특별전형 지원율 상위 5개 및 하위 5개 모집단위",
+                  "file": "hwpx/T031_[참고]_기초생활수급자_및_차상위계층_특별전형_지원율_.json",
+                  "status": "auto-extracted",
+                  "shape": "7×10"
+                }
+              ]
+            },
+            {
+              "id": "I-5-3",
+              "title": "5.3 특성화고교졸업자",
+              "tables": [
+                {
+                  "id": "T032",
+                  "index": 32,
+                  "title": "특성화고교졸업자 특별전형(정원 외)",
+                  "file": "hwpx/T032_□_특성화고교졸업자_특별전형(정원_외).json",
+                  "status": "auto-extracted",
+                  "shape": "14×8"
+                },
+                {
+                  "id": "T033",
+                  "index": 33,
+                  "title": "[참고] 특성화고교졸업자 특별전형 지원율 상위 5개 및 하위 5개 모집단위",
+                  "file": "hwpx/T033_[참고]_특성화고교졸업자_특별전형_지원율_상위_5개_및.json",
+                  "status": "auto-extracted",
+                  "shape": "7×10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-6",
+          "title": "6. 지역별 지원",
+          "groups": [
+            {
+              "id": "I-6-1",
+              "title": "6.1 지역별 지원 현황 (전체/의예과 제외)",
+              "tables": [
+                {
+                  "id": "T034",
+                  "index": 34,
+                  "title": "지역별 지원 현황(전체 지원 인원)",
+                  "file": "hwpx/T034_□_지역별_지원_현황(전체_지원_인원).json",
+                  "status": "auto-extracted",
+                  "shape": "21×7"
+                },
+                {
+                  "id": "T035",
+                  "index": 35,
+                  "title": "지역별 지원 현황(의예과 제외)",
+                  "file": "hwpx/T035_□_지역별_지원_현황(의예과_제외).json",
+                  "status": "auto-extracted",
+                  "shape": "21×7"
+                }
+              ]
+            },
+            {
+              "id": "I-6-2",
+              "title": "6.2 지역별 실제 지원 인원",
+              "tables": [
+                {
+                  "id": "T036",
+                  "index": 36,
+                  "title": "2026학년도 지역별 실제 지원 인원 현황",
+                  "file": "hwpx/T036_□_2026학년도_지역별_실제_지원_인원_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "21×6"
+                },
+                {
+                  "id": "T037",
+                  "index": 37,
+                  "title": "2026학년도 지역별 실제 지원 인원 현황(의예과 지원자 제외)",
+                  "file": "hwpx/T037_□_2026학년도_지역별_실제_지원_인원_현황(의예과_.json",
+                  "status": "auto-extracted",
+                  "shape": "21×6"
+                }
+              ]
+            },
+            {
+              "id": "I-6-3",
+              "title": "6.3 의예과 지역별",
+              "tables": [
+                {
+                  "id": "T038",
+                  "index": 38,
+                  "title": "지역별 지원 현황(의예과)",
+                  "file": "hwpx/T038_□_지역별_지원_현황(의예과).json",
+                  "status": "auto-extracted",
+                  "shape": "20×6"
+                }
+              ]
+            },
+            {
+              "id": "I-6-4",
+              "title": "6.4 전형유형×지역별",
+              "tables": [
+                {
+                  "id": "T039",
+                  "index": 39,
+                  "title": "전형유형/지역별 지원 현황(전체)",
+                  "file": "hwpx/T039_□_전형유형지역별_지원_현황(전체).json",
+                  "status": "auto-extracted",
+                  "shape": "20×7"
+                },
+                {
+                  "id": "T040",
+                  "index": 40,
+                  "title": "전형유형/지역별 지원 현황(의예과 제외)",
+                  "file": "hwpx/T040_□_전형유형지역별_지원_현황(의예과_제외).json",
+                  "status": "auto-extracted",
+                  "shape": "20×7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-7",
+          "title": "7. 고교별 지원",
+          "groups": [
+            {
+              "id": "I-7-1",
+              "title": "7.1 상위 60개 고교 지원 현황",
+              "tables": [
+                {
+                  "id": "T041",
+                  "index": 41,
+                  "title": "고교별 지원 현황(2026학년도 기준 상위 60개교)",
+                  "file": "hwpx/T041_□_고교별_지원_현황(2026학년도_기준_상위_60개교.json",
+                  "status": "auto-extracted",
+                  "shape": "31×10"
+                }
+              ]
+            },
+            {
+              "id": "I-7-2",
+              "title": "7.2 상위 30개 고교 분석",
+              "tables": [
+                {
+                  "id": "T042",
+                  "index": 42,
+                  "title": "2026학년도 지원자 수 상위 30개 고교의 전형유형별 지원 현황",
+                  "file": "hwpx/T042_□_2026학년도_지원자_수_상위_30개_고교의_전형유.json",
+                  "status": "auto-extracted",
+                  "shape": "32×8"
+                },
+                {
+                  "id": "T043",
+                  "index": 43,
+                  "title": "2026학년도 지원자 수 상위 30개 고교의 지원자 성적",
+                  "file": "hwpx/T043_□_2026학년도_지원자_수_상위_30개_고교의_지원자.json",
+                  "status": "auto-extracted",
+                  "shape": "33×7"
+                }
+              ]
+            },
+            {
+              "id": "I-7-3",
+              "title": "7.3 보조 데이터",
+              "tables": [
+                {
+                  "id": "T044",
+                  "index": 44,
+                  "title": "연번고고명총지원자 수2026 일반교과+지역교과 지원자2025 일반교과+지역교과 지원자지원자 수석차등급 평균지원자 수석차등급 평균1신정고등학교2891474.461624.472호계고등학교2861814.121303.913",
+                  "file": "hwpx/T044_연번고고명총지원자_수2026_일반교과+지역교과_지원자2.json",
+                  "status": "auto-extracted",
+                  "shape": "3×3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-8",
+          "title": "8. 예체능·특기·경기 추가",
+          "groups": [
+            {
+              "id": "I-8-1",
+              "title": "8.1 예체능 / 농어촌(예체능)",
+              "tables": [
+                {
+                  "id": "T048",
+                  "index": 48,
+                  "title": "예체능 전형",
+                  "file": "hwpx/T048_□_예체능_전형.json",
+                  "status": "auto-extracted",
+                  "shape": "7×8"
+                },
+                {
+                  "id": "T049",
+                  "index": 49,
+                  "title": "예체능 농어촌 전형",
+                  "file": "hwpx/T049_□_예체능_농어촌_전형.json",
+                  "status": "auto-extracted",
+                  "shape": "4×8"
+                }
+              ]
+            },
+            {
+              "id": "I-8-2",
+              "title": "8.2 특기자 추가",
+              "tables": [
+                {
+                  "id": "T050",
+                  "index": 50,
+                  "title": "특기자 특별전형",
+                  "file": "hwpx/T050_□_특기자_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "10×9"
+                }
+              ]
+            },
+            {
+              "id": "I-8-3",
+              "title": "8.3 경기실적 우수자 추가",
+              "tables": [
+                {
+                  "id": "T051",
+                  "index": 51,
+                  "title": "경기실적우수자 특별전형",
+                  "file": "hwpx/T051_□_경기실적우수자_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "16×9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "I-9",
+          "title": "9. 학생부 석차등급",
+          "groups": [
+            {
+              "id": "I-9-1",
+              "title": "9.1 평균·70%컷·커트라인",
+              "tables": [
+                {
+                  "id": "T089",
+                  "index": 89,
+                  "title": "교과등급 평균, 70%컷, 커트라인(전년도와 비교)",
+                  "file": "hwpx/T089_◦교과등급_평균,_70%컷,_커트라인(전년도와_비교).json",
+                  "status": "auto-extracted",
+                  "shape": "19×8"
+                }
+              ]
+            },
+            {
+              "id": "I-9-2",
+              "title": "9.2 모집단위별 분포 (히트맵)",
+              "tables": [
+                {
+                  "id": "T090",
+                  "index": 90,
+                  "title": "일반교과 모집단위별 석차등급 분포도(히트맵)",
+                  "file": "hwpx/T090_◦일반교과_모집단위별_석차등급_분포도(히트맵).json",
+                  "status": "auto-extracted",
+                  "shape": "16×10"
+                }
+              ]
+            },
+            {
+              "id": "I-9-3",
+              "title": "9.3 보조 데이터",
+              "tables": [
+                {
+                  "id": "T059",
+                  "index": 59,
+                  "title": "모집단위평균 등급최저 등급20262025증감20262025증감자율전공학부2.79 2.73 -0.06 3.44 3.19 -0.26 미래모빌리티공학부4.27 4.52 0.25 4.95 5.51 0.56 에너지화학공학부3",
+                  "file": "hwpx/T059_모집단위평균_등급최저_등급20262025증감202620.json",
+                  "status": "auto-extracted",
+                  "shape": "3×3"
+                }
+              ]
+            },
+            {
+              "id": "I-9-4",
+              "title": "9.4 지역교과 등록자 분포 (XLSX)",
+              "tables": [
+                {
+                  "id": "I-3-01",
+                  "title": "지역교과 모집단위별 석차등급 분포(2026 등록자) — XLSX 집계",
+                  "file": "I-3-01_석차등급분포.json",
+                  "status": "final"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "II. 대학별 고사(면접·실기) 결시율 현황",
+      "subcategories": [
+        {
+          "id": "II-1",
+          "title": "1. 면접 결시율",
+          "groups": [
+            {
+              "id": "II-1-1",
+              "title": "1.1 잠재역량 (의예과 제외)",
+              "tables": [
+                {
+                  "id": "T045",
+                  "index": 45,
+                  "title": "2026학년도 잠재역량 면접 결시율 현황(의예과 제외)",
+                  "file": "hwpx/T045_□_2026학년도_잠재역량_면접_결시율_현황(의예과_제.json",
+                  "status": "auto-extracted",
+                  "shape": "15×7"
+                }
+              ]
+            },
+            {
+              "id": "II-1-2",
+              "title": "1.2 전년 대비 추이",
+              "tables": [
+                {
+                  "id": "T046",
+                  "index": 46,
+                  "title": "2025학년도 대비 면접 결시율 현황 추이",
+                  "file": "hwpx/T046_□_2025학년도_대비_면접_결시율_현황_추이.json",
+                  "status": "auto-extracted",
+                  "shape": "16×8"
+                }
+              ]
+            },
+            {
+              "id": "II-1-3",
+              "title": "1.3 의예과",
+              "tables": [
+                {
+                  "id": "T047",
+                  "index": 47,
+                  "title": "2026학년도 의예과 면접 결시율 현황",
+                  "file": "hwpx/T047_□_2026학년도_의예과_면접_결시율_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "6×8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "II-2",
+          "title": "2. 실기 결시율",
+          "groups": [
+            {
+              "id": "II-2-1",
+              "title": "2.1 스포츠과학부 실기",
+              "tables": [
+                {
+                  "id": "T052",
+                  "index": 52,
+                  "title": "모집단위2026학년도2025학년도증감면접 대상자결시자결시율(%)면접 대상자결시자결시율(%)스포츠과학부 농구(남, 가드)635030050농구(남, 센터)2002000농구(남, 포워드)9222.228112.59.72농구",
+                  "file": "hwpx/T052_모집단위2026학년도2025학년도증감면접_대상자결시자결.json",
+                  "status": "auto-extracted",
+                  "shape": "3×3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "III",
+      "title": "III. 최초합격자 현황",
+      "subcategories": [
+        {
+          "id": "III-1",
+          "title": "1. 학생부 성적",
+          "groups": [
+            {
+              "id": "III-1-1",
+              "title": "1.1 일반교과",
+              "tables": [
+                {
+                  "id": "T055",
+                  "index": 55,
+                  "title": "일반교과 최초합격자의 학생부 성적(석차등급/본교 산출 기준)",
+                  "file": "hwpx/T055_□_일반교과_최초합격자의_학생부_성적(석차등급본교_산출.json",
+                  "status": "auto-extracted",
+                  "shape": "17×7"
+                }
+              ]
+            },
+            {
+              "id": "III-1-2",
+              "title": "1.2 지역교과",
+              "tables": [
+                {
+                  "id": "T056",
+                  "index": 56,
+                  "title": "지역교과 최초합격자의 학생부 성적(석차등급/본교 산출 기준)",
+                  "file": "hwpx/T056_□_지역교과_최초합격자의_학생부_성적(석차등급본교_산출.json",
+                  "status": "auto-extracted",
+                  "shape": "17×7"
+                }
+              ]
+            },
+            {
+              "id": "III-1-3",
+              "title": "1.3 잠재역량",
+              "tables": [
+                {
+                  "id": "T057",
+                  "index": 57,
+                  "title": "잠재역량 최초합격자의 학생부 성적(석차등급/전 과목 기준)",
+                  "file": "hwpx/T057_□_잠재역량_최초합격자의_학생부_성적(석차등급전_과목_.json",
+                  "status": "auto-extracted",
+                  "shape": "17×7"
+                }
+              ]
+            },
+            {
+              "id": "III-1-4",
+              "title": "1.4 지역인재",
+              "tables": [
+                {
+                  "id": "T058",
+                  "index": 58,
+                  "title": "지역인재 최초합격자의 학생부 성적(석차등급/전 과목 기준)",
+                  "file": "hwpx/T058_□_지역인재_최초합격자의_학생부_성적(석차등급전_과목_.json",
+                  "status": "auto-extracted",
+                  "shape": "16×7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "III-2",
+          "title": "2. 최종등록률",
+          "groups": [
+            {
+              "id": "III-2-1",
+              "title": "2.1 정원 내+외 종합",
+              "tables": [
+                {
+                  "id": "T085",
+                  "index": 85,
+                  "title": "최초합격자의 최종등록률(정원내/외)",
+                  "file": "hwpx/T085_□_최초합격자의_최종등록률(정원내외).json",
+                  "status": "auto-extracted",
+                  "shape": "20×8"
+                }
+              ]
+            },
+            {
+              "id": "III-2-2",
+              "title": "2.2 정원 내",
+              "tables": [
+                {
+                  "id": "T086",
+                  "index": 86,
+                  "title": "최초합격자의 최종등록률(정원 내)",
+                  "file": "hwpx/T086_□_최초합격자의_최종등록률(정원_내).json",
+                  "status": "auto-extracted",
+                  "shape": "20×8"
+                }
+              ]
+            },
+            {
+              "id": "III-2-3",
+              "title": "2.3 정원 외",
+              "tables": [
+                {
+                  "id": "T087",
+                  "index": 87,
+                  "title": "최초합격자의 최종등록률(정원 외)",
+                  "file": "hwpx/T087_□_최초합격자의_최종등록률(정원_외).json",
+                  "status": "auto-extracted",
+                  "shape": "16×8"
+                }
+              ]
+            },
+            {
+              "id": "III-2-4",
+              "title": "2.4 요약 코멘트",
+              "tables": [
+                {
+                  "id": "T088",
+                  "index": 88,
+                  "title": "- 전년 대비 정원외 최초합격자의 최종등록 감소인원은 5명(56명 → 51명)이며, 모집단위별로는 스포츠과학부(+33.3%p), 글로벌인문학부(+44.3%p), 경영경제융합학부(+9.6%p) 등은 상승했으나, 바이오",
+                  "file": "hwpx/T088_-_전년_대비_정원외_최초합격자의_최종등록_감소인원은_.json",
+                  "status": "auto-extracted",
+                  "shape": "3×3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IV",
+      "title": "IV. 수시모집 합격 및 등록 현황",
+      "subcategories": [
+        {
+          "id": "IV-1",
+          "title": "1. 사정 현황",
+          "groups": [
+            {
+              "id": "IV-1-1",
+              "title": "1.1 1차 사정 (2025.11.11.)",
+              "tables": [
+                {
+                  "id": "T053",
+                  "index": 53,
+                  "title": "수시모집(2025.11.11.) 사정 현황",
+                  "file": "hwpx/T053_□_수시모집(2025.11.11.)_사정_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "18×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-1-2",
+              "title": "1.2 2차 사정 (2025.12.12.)",
+              "tables": [
+                {
+                  "id": "T054",
+                  "index": 54,
+                  "title": "수시모집(2025.12.12.) 사정 현황",
+                  "file": "hwpx/T054_□_수시모집(2025.12.12.)_사정_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "9×9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "IV-2",
+          "title": "2. 등록 현황",
+          "groups": [
+            {
+              "id": "IV-2-1",
+              "title": "2.1 전체 등록",
+              "tables": [
+                {
+                  "id": "T060",
+                  "index": 60,
+                  "title": "전체 등록 현황(정원내/정원외 모두 포함)",
+                  "file": "hwpx/T060_□_전체_등록_현황(정원내정원외_모두_포함).json",
+                  "status": "auto-extracted",
+                  "shape": "20×8"
+                }
+              ]
+            },
+            {
+              "id": "IV-2-2",
+              "title": "2.2 정원 내 등록",
+              "tables": [
+                {
+                  "id": "T061",
+                  "index": 61,
+                  "title": "정원 내 등록현황",
+                  "file": "hwpx/T061_□_정원_내_등록현황.json",
+                  "status": "auto-extracted",
+                  "shape": "20×8"
+                }
+              ]
+            },
+            {
+              "id": "IV-2-3",
+              "title": "2.3 정원 외 등록",
+              "tables": [
+                {
+                  "id": "T062",
+                  "index": 62,
+                  "title": "정원 외 등록현황",
+                  "file": "hwpx/T062_□_정원_외_등록현황.json",
+                  "status": "auto-extracted",
+                  "shape": "16×8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "IV-3",
+          "title": "3. 일반전형 차수별 합격·등록",
+          "groups": [
+            {
+              "id": "IV-3-1",
+              "title": "3.1 일반교과",
+              "tables": [
+                {
+                  "id": "T063",
+                  "index": 63,
+                  "title": "일반교과 차수별 합격 현황",
+                  "file": "hwpx/T063_◦일반교과_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                },
+                {
+                  "id": "T064",
+                  "index": 64,
+                  "title": "일반교과 차수별 등록 현황(최종)",
+                  "file": "hwpx/T064_◦일반교과_차수별_등록_현황(최종).json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-3-2",
+              "title": "3.2 지역교과",
+              "tables": [
+                {
+                  "id": "T065",
+                  "index": 65,
+                  "title": "지역교과 차수별 합격 현황",
+                  "file": "hwpx/T065_◦지역교과_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                },
+                {
+                  "id": "T066",
+                  "index": 66,
+                  "title": "지역교과 차수별 등록 현황(최종)",
+                  "file": "hwpx/T066_◦지역교과_차수별_등록_현황(최종).json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-3-3",
+              "title": "3.3 잠재역량",
+              "tables": [
+                {
+                  "id": "T067",
+                  "index": 67,
+                  "title": "잠재역량 차수별 합격 현황",
+                  "file": "hwpx/T067_◦잠재역량_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                },
+                {
+                  "id": "T068",
+                  "index": 68,
+                  "title": "잠재역량 차수별 등록 현황(최종)",
+                  "file": "hwpx/T068_◦잠재역량_차수별_등록_현황(최종).json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-3-4",
+              "title": "3.4 지역인재",
+              "tables": [
+                {
+                  "id": "T069",
+                  "index": 69,
+                  "title": "지역인재 차수별 합격 현황",
+                  "file": "hwpx/T069_◦지역인재_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                },
+                {
+                  "id": "T070",
+                  "index": 70,
+                  "title": "지역인재 차수별 등록 현황(최종)",
+                  "file": "hwpx/T070_◦지역인재_차수별_등록_현황(최종).json",
+                  "status": "auto-extracted",
+                  "shape": "17×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-3-5",
+              "title": "3.5 예체능",
+              "tables": [
+                {
+                  "id": "T071",
+                  "index": 71,
+                  "title": "예체능 전형 차수별 합격 현황",
+                  "file": "hwpx/T071_◦예체능_전형_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "7×9"
+                },
+                {
+                  "id": "T072",
+                  "index": 72,
+                  "title": "예체능 전형 차수별 등록 현황",
+                  "file": "hwpx/T072_◦예체능_전형_차수별_등록_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "7×9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "IV-4",
+          "title": "4. 특별전형 차수별 합격·등록",
+          "groups": [
+            {
+              "id": "IV-4-1",
+              "title": "4.1 농어촌 (정원 외)",
+              "tables": [
+                {
+                  "id": "T073",
+                  "index": 73,
+                  "title": "농어촌학생 특별전형(정원외) 차수별 합격 현황",
+                  "file": "hwpx/T073_◦농어촌학생_특별전형(정원외)_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "15×9"
+                },
+                {
+                  "id": "T074",
+                  "index": 74,
+                  "title": "농어촌학생 특별전형(정원외) 차수별 등록 현황",
+                  "file": "hwpx/T074_◦농어촌학생_특별전형(정원외)_차수별_등록_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "15×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-4-2",
+              "title": "4.2 기회균형",
+              "tables": [
+                {
+                  "id": "T075",
+                  "index": 75,
+                  "title": "기회균형 특별전형 차수별 합격 현황",
+                  "file": "hwpx/T075_◦기회균형_특별전형_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "14×9"
+                },
+                {
+                  "id": "T076",
+                  "index": 76,
+                  "title": "기회균형 특별전형 차수별 등록 현황",
+                  "file": "hwpx/T076_◦기회균형_특별전형_차수별_등록_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "14×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-4-3",
+              "title": "4.3 기초생활·차상위 (정원 외)",
+              "tables": [
+                {
+                  "id": "T077",
+                  "index": 77,
+                  "title": "기초생활수급자 및 차상위계층 특별전형(정원 외) 차수별 합격 현황",
+                  "file": "hwpx/T077_◦기초생활수급자_및_차상위계층_특별전형(정원_외)_차수.json",
+                  "status": "auto-extracted",
+                  "shape": "14×9"
+                },
+                {
+                  "id": "T078",
+                  "index": 78,
+                  "title": "기초생활수급자 및 차상위계층 특별전형(정원 외) 차수별 등록 현황",
+                  "file": "hwpx/T078_◦기초생활수급자_및_차상위계층_특별전형(정원_외)_차수.json",
+                  "status": "auto-extracted",
+                  "shape": "14×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-4-4",
+              "title": "4.4 특성화고 (정원 외)",
+              "tables": [
+                {
+                  "id": "T079",
+                  "index": 79,
+                  "title": "특성화교교 졸업자 특별전형(정원 외) 차수별 합격 현황",
+                  "file": "hwpx/T079_◦특성화교교_졸업자_특별전형(정원_외)_차수별_합격_현.json",
+                  "status": "auto-extracted",
+                  "shape": "13×9"
+                },
+                {
+                  "id": "T080",
+                  "index": 80,
+                  "title": "특성화교교 졸업자 특별전형(정원 외) 차수별 등록 현황",
+                  "file": "hwpx/T080_◦특성화교교_졸업자_특별전형(정원_외)_차수별_등록_현.json",
+                  "status": "auto-extracted",
+                  "shape": "13×9"
+                }
+              ]
+            },
+            {
+              "id": "IV-4-5",
+              "title": "4.5 특기자",
+              "tables": [
+                {
+                  "id": "T081",
+                  "index": 81,
+                  "title": "특기자 특별전형 차수별 합격 현황",
+                  "file": "hwpx/T081_◦특기자_특별전형_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "9×10"
+                },
+                {
+                  "id": "T082",
+                  "index": 82,
+                  "title": "특기자 특별전형 차수별 등록 현황",
+                  "file": "hwpx/T082_◦특기자_특별전형_차수별_등록_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "9×10"
+                }
+              ]
+            },
+            {
+              "id": "IV-4-6",
+              "title": "4.6 경기실적 우수자",
+              "tables": [
+                {
+                  "id": "T083",
+                  "index": 83,
+                  "title": "경기실적 우수자 특별전형 차수별 합격 현황",
+                  "file": "hwpx/T083_◦경기실적_우수자_특별전형_차수별_합격_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "15×9"
+                },
+                {
+                  "id": "T084",
+                  "index": 84,
+                  "title": "경기실적 우수자 특별전형 차수별 등록 현황",
+                  "file": "hwpx/T084_◦경기실적_우수자_특별전형_차수별_등록_현황.json",
+                  "status": "auto-extracted",
+                  "shape": "15×9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "IV-5",
+          "title": "5. XLSX 추가 산출",
+          "groups": [
+            {
+              "id": "IV-5-1",
+              "title": "5.1 모집단위별 합격구분 집계",
+              "tables": [
+                {
+                  "id": "IV-1-01",
+                  "title": "모집단위별 합격구분 집계 (최초·충원·예비순위·1단계 불합격) — XLSX 집계",
+                  "file": "IV-1-01_최종등록.json",
+                  "status": "final"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Z",
+      "title": "Z. 미분류 / 보고서 장식",
+      "subcategories": [
+        {
+          "id": "Z-1",
+          "title": "1. 보고서 장식",
+          "groups": [
+            {
+              "id": "Z-1-1",
+              "title": "1.1 표지·장식",
+              "tables": [
+                {
+                  "id": "T001",
+                  "index": 1,
+                  "title": "표 1",
+                  "file": "hwpx/T001_표_1.json",
+                  "status": "auto-extracted",
+                  "shape": "3×3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

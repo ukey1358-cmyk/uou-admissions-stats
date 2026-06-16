@@ -749,6 +749,8 @@ h1, h2, h3, h4 { font-family: var(--font-stack); font-weight: 700; margin: 0; co
 .tree .cat.collapsed > .cat-title::before { transform: rotate(0deg); }
 .tree .cat.collapsed > ul { display: none; }
 .tree ul { list-style: none; padding: 0 0 0 var(--space-md); margin: 0 0 var(--space-xs); }
+/* 소분류(1.1, 1.2 …)는 중분류 텍스트 시작선에 더 붙여 좌측으로 당김 */
+.tree .sub > ul { padding-left: 0; }
 .tree .sub-title {
   font-size: 18px;
   font-weight: 600;

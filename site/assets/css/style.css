@@ -724,7 +724,7 @@ h1, h2, h3, h4 { font-family: var(--font-stack); font-weight: 700; margin: 0; co
 .tree { list-style: none; padding: 0; margin: 0; }
 .tree .cat-title {
   font-family: var(--font-stack);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.3px;
   color: var(--ink);
@@ -750,7 +750,7 @@ h1, h2, h3, h4 { font-family: var(--font-stack); font-weight: 700; margin: 0; co
 .tree .cat.collapsed > ul { display: none; }
 .tree ul { list-style: none; padding: 0 0 0 var(--space-md); margin: 0 0 var(--space-xs); }
 .tree .sub-title {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.2px;
   color: var(--ink-muted-80);
@@ -1000,7 +1000,7 @@ table.data-table {
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-stack);
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: -0.28px;
   font-variant-numeric: tabular-nums;
   color: var(--ink);
@@ -1040,7 +1040,7 @@ table.data-table thead th:hover {
   background: var(--primary-deep);
 }
 table.data-table thead th .sort-ind {
-  font-size: 10px;
+  font-size: 14px;
   margin-left: 6px;
   color: var(--on-dark-muted);
   opacity: 0.8;

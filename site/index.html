@@ -239,10 +239,11 @@
           .then(r => { if (!r.ok) throw new Error('index ' + r.status); return r.json(); });
 
         let entry = null;
-        for (const cat of idx.categories)
-          for (const sub of cat.subcategories)
-            for (const t of sub.tables)
-              if (t.id === 'T002') entry = t;
+        for (const cat of idx.categories ?? [])
+          for (const sub of cat.subcategories ?? [])
+            for (const grp of (sub.groups ?? [{ tables: sub.tables ?? [] }]))
+              for (const t of (grp.tables ?? []))
+                if (t.id === 'T002') entry = t;
         if (!entry) throw new Error('T002 not in index');
 
         const url = '../data/2026/' + entry.file.split('/').map(encodeURIComponent).join('/');

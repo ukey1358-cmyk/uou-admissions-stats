@@ -185,7 +185,13 @@
       const root = document.getElementById('content-root');
       root.innerHTML = '';
       TableRenderer.render(root, data);
-      ChartRenderer.render(data);
+      // I-002(전체 지원 현황)는 표 안 인라인 데이터바로 분포를 보여주므로
+      // 아래쪽 별도 차트는 생략 — 시안용 평가.
+      if (data.id === 'I-002') {
+        ChartRenderer.destroy();
+      } else {
+        ChartRenderer.render(data);
+      }
 
       // active link 표시
       document.querySelectorAll('#tree-root .table-link').forEach(a => {

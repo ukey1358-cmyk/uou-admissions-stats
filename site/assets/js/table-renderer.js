@@ -73,6 +73,19 @@
 
     const m = table.meta || {};
 
+    // 인라인 데이터바 — 특정 표(I-002 전체 지원 현황)에서 핵심 지원율 셀에
+    // 막대 배경을 깔아 표만으로 분포를 한눈에 비교 가능하게 한다. 시안용.
+    const BAR_COLS = (table.id === 'I-002') ? [3, 6] : [];
+    const colMax = {};
+    BAR_COLS.forEach(ci => {
+      let max = 0;
+      (table.rows || []).forEach(r => {
+        const v = parseFloat(r[ci]);
+        if (!isNaN(v) && v > max) max = v;
+      });
+      colMax[ci] = max;
+    });
+
     // 컬럼 분류 — 헤더 텍스트로 (2026 / 2025 / 증감 / 라벨) 구분.
     // 같은 표 안에 2026·2025 컬럼이 모두 있으면 "비교 보기" 토글을 제공.
     const colKind = (table.headers || []).map(h => {
@@ -141,7 +154,7 @@
     thead.appendChild(trh);
     tbl.appendChild(thead);
 
-    function fillCell(td, cell, ci) {
+    function fillCell(td, cell, ci, isTotals) {
       td.dataset.col = ci;
       // 증감 컬럼: 부호별 색·화살표
       if (diffCols.has(ci)) {
@@ -161,6 +174,15 @@
       if (isHeatmap && ci > 0 && typeof cell === 'number') {
         td.classList.add('grade-cell', gradeClass(cell));
         td.textContent = cell.toFixed(1) + '%';
+      }
+      // 인라인 데이터바 — 합계 행 제외, 대상 컬럼에만
+      if (!isTotals && BAR_COLS.indexOf(ci) !== -1 && colMax[ci] > 0) {
+        const v = parseFloat(cell);
+        if (!isNaN(v)) {
+          td.classList.add('bar-cell');
+          const pct = Math.max(0, Math.min(100, (v / colMax[ci]) * 100));
+          td.style.setProperty('--bar-pct', pct.toFixed(1) + '%');
+        }
       }
     }
 
@@ -186,7 +208,7 @@
       const tr = document.createElement('tr');
       table.totals.forEach((c, ci) => {
         const td = document.createElement('td');
-        fillCell(td, c, ci);
+        fillCell(td, c, ci, true);
         tr.appendChild(td);
       });
       tfoot.appendChild(tr);
@@ -265,12 +287,14 @@
       window.print();
     });
 
-    // Chart placeholder (chart-renderer가 채움)
-    const chartWrap = document.createElement('div');
-    chartWrap.className = 'chart-wrap';
-    chartWrap.id = 'chart-wrap';
-    chartWrap.innerHTML = '<canvas id="main-chart"></canvas>';
-    container.appendChild(chartWrap);
+    // Chart placeholder (chart-renderer가 채움) — 인라인 데이터바를 쓰는 표에선 생략
+    if (table.id !== 'I-002') {
+      const chartWrap = document.createElement('div');
+      chartWrap.className = 'chart-wrap';
+      chartWrap.id = 'chart-wrap';
+      chartWrap.innerHTML = '<canvas id="main-chart"></canvas>';
+      container.appendChild(chartWrap);
+    }
   }
 
   function exportCsv(table) {

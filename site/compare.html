@@ -9,7 +9,6 @@
   <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -70,7 +69,6 @@
 
   <script src="assets/js/header.js"></script>
   <script src="assets/js/table-renderer.js"></script>
-  <script src="assets/js/chart-renderer.js"></script>
   <script>
     (async () => {
       try {
@@ -113,10 +111,9 @@
         renderList('top-up',   up5);
         renderList('top-down', down5);
 
-        // Main 표 + 차트
+        // Main 표
         const root = document.getElementById('content-root');
         TableRenderer.render(root, data);
-        ChartRenderer.render(data);
       } catch (e) {
         console.error(e);
         document.getElementById('content-root').innerHTML =

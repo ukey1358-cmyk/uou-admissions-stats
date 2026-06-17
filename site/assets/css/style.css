@@ -1081,38 +1081,6 @@ table.data-table td.diff-pos  { color: var(--up); }
 table.data-table td.diff-neg  { color: var(--down); }
 table.data-table td.diff-zero { color: var(--ink-muted-60); font-weight: 500; }
 
-/* Inline data bar — 셀 자체에 막대 배경. --bar-pct(%) 만큼 좌→우로 채움.
-   isolation:isolate 로 td 안에 스택 컨텍스트를 만들어 ::before(z:-1)가
-   tr의 nth-child 배경 위, 셀 텍스트 아래에 그려지도록 한다. */
-table.data-table td.bar-cell {
-  position: relative;
-  isolation: isolate;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-}
-table.data-table td.bar-cell::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: var(--bar-pct, 0%);
-  background: linear-gradient(90deg,
-    rgba(0, 107, 60, 0.18) 0%,
-    rgba(0, 107, 60, 0.32) 100%);
-  border-right: 1px solid rgba(0, 107, 60, 0.55);
-  z-index: -1;
-  transition: width 240ms ease-out;
-}
-
-/* ---------- Chart wrapper ---------- */
-.chart-wrap {
-  background: var(--canvas);
-  border: 1px solid var(--hairline);
-  border-radius: var(--r-md);
-  padding: var(--space-lg);
-  margin-top: var(--space-lg);
-  height: 400px;
-}
-
 /* ---------- Compare page ---------- */
 .compare-main { padding: 0; }
 
@@ -1465,7 +1433,7 @@ table.data-table td.bar-cell::before {
 
 /* ---------- Print ---------- */
 @media print {
-  .page-header, .section-strip, .sidebar, .toolbar, .chart-wrap, .site-footer { display: none; }
+  .page-header, .section-strip, .sidebar, .toolbar, .site-footer { display: none; }
   body { background: #fff; }
   .content { padding: 0; }
   table.data-table { font-size: 11px; }

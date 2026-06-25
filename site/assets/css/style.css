@@ -1081,6 +1081,15 @@ table.data-table td.diff-pos  { color: var(--up); }
 table.data-table td.diff-neg  { color: var(--down); }
 table.data-table td.diff-zero { color: var(--ink-muted-60); font-weight: 500; }
 
+/* 좌/우 2단 배열 표(헤더 반복)에서 두 번째 단의 시작 컬럼 좌측에 구분 선 */
+table.data-table th.col-split,
+table.data-table td.col-split {
+  border-left: 2px solid var(--ink-muted-40);
+}
+table.data-table thead th.col-split {
+  border-left-color: rgba(255, 255, 255, 0.45);
+}
+
 /* ---------- Compare page ---------- */
 .compare-main { padding: 0; }
 

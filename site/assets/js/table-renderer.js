@@ -56,6 +56,19 @@
     const diffCols = new Set();
     (table.headers || []).forEach((h, i) => { if (/증감/.test(h)) diffCols.add(i); });
 
+    // 분할 컬럼 식별 — 동일 헤더가 처음 다시 등장하는 컬럼(좌/우 2단 배열 표)의 좌측에만 세로 선
+    const splitCols = new Set();
+    {
+      const headers = table.headers || [];
+      const seen = new Set();
+      for (let i = 0; i < headers.length; i++) {
+        const key = String(headers[i] || '').trim();
+        if (!key) continue;
+        if (seen.has(key)) { splitCols.add(i); break; }
+        seen.add(key);
+      }
+    }
+
     container.innerHTML = '';
 
     // Title block
@@ -132,6 +145,7 @@
       const th = document.createElement('th');
       th.textContent = h;
       th.dataset.col = i;
+      if (splitCols.has(i)) th.classList.add('col-split');
       const ind = document.createElement('span');
       ind.className = 'sort-ind';
       ind.textContent = '↕';
@@ -143,6 +157,7 @@
 
     function fillCell(td, cell, ci) {
       td.dataset.col = ci;
+      if (splitCols.has(ci)) td.classList.add('col-split');
       // 증감 컬럼: 부호별 색·화살표
       if (diffCols.has(ci)) {
         const v = parseDiff(cell);

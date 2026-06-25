@@ -396,28 +396,6 @@
           "title": "8. 예체능·특기·경기 추가",
           "groups": [
             {
-              "id": "I-8-1",
-              "title": "8.1 예체능 / 농어촌(예체능)",
-              "tables": [
-                {
-                  "id": "T048",
-                  "index": 48,
-                  "title": "예체능 전형",
-                  "file": "hwpx/T048_□_예체능_전형.json",
-                  "status": "auto-extracted",
-                  "shape": "7×8"
-                },
-                {
-                  "id": "T049",
-                  "index": 49,
-                  "title": "예체능 농어촌 전형",
-                  "file": "hwpx/T049_□_예체능_농어촌_전형.json",
-                  "status": "auto-extracted",
-                  "shape": "4×8"
-                }
-              ]
-            },
-            {
               "id": "I-8-2",
               "title": "8.2 특기자 추가",
               "tables": [
@@ -721,15 +699,29 @@
           "groups": [
             {
               "id": "II-2-1",
-              "title": "2.1 스포츠과학부 실기",
+              "title": "2.1 예체능 전형",
               "tables": [
                 {
-                  "id": "T052",
-                  "index": 52,
-                  "title": "모집단위2026학년도2025학년도증감면접 대상자결시자결시율(%)면접 대상자결시자결시율(%)스포츠과학부 농구(남, 가드)635030050농구(남, 센터)2002000농구(남, 포워드)9222.228112.59.72농구",
-                  "file": "hwpx/T052_모집단위2026학년도2025학년도증감면접_대상자결시자결.json",
+                  "id": "T048",
+                  "index": 48,
+                  "title": "예체능 전형",
+                  "file": "hwpx/T048_□_예체능_전형.json",
                   "status": "auto-extracted",
-                  "shape": "3×3"
+                  "shape": "7×8"
+                }
+              ]
+            },
+            {
+              "id": "II-2-2",
+              "title": "2.2 예체능 농어촌 전형",
+              "tables": [
+                {
+                  "id": "T049",
+                  "index": 49,
+                  "title": "예체능 농어촌 전형",
+                  "file": "hwpx/T049_□_예체능_농어촌_전형.json",
+                  "status": "auto-extracted",
+                  "shape": "4×8"
                 }
               ]
             }

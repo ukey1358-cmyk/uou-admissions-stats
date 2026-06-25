@@ -425,43 +425,85 @@
           "groups": [
             {
               "id": "I-5-1",
-              "title": "5.1 전체(정원내/정원외 모두 포함)",
+              "title": "5.1 지원율 상승 5개 모집단위(전체)",
               "tables": [
                 {
-                  "id": "T004",
+                  "id": "T004a",
                   "index": 4,
-                  "title": "전체(정원내/정원외 모두 포함)",
-                  "file": "hwpx/T004_◦2025학년도_대비_지원율_상승_및_하락_5개_모집단.json",
+                  "title": "지원율 상승 5개 모집단위(전체)",
+                  "file": "hwpx/T004a_지원율_상승_5개_모집단위(전체).json",
                   "status": "auto-extracted",
-                  "shape": "7×10"
+                  "shape": "5×5"
                 }
               ]
             },
             {
               "id": "I-5-2",
-              "title": "5.2 정원내",
+              "title": "5.2 지원율 하락 5개 모집단위(전체)",
               "tables": [
                 {
-                  "id": "T010",
-                  "index": 10,
-                  "title": "정원내",
-                  "file": "hwpx/T010_[참고]_2025학년도_대비_지원율_상승_및_하락_5개.json",
+                  "id": "T004b",
+                  "index": 4,
+                  "title": "지원율 하락 5개 모집단위(전체)",
+                  "file": "hwpx/T004b_지원율_하락_5개_모집단위(전체).json",
                   "status": "auto-extracted",
-                  "shape": "7×10"
+                  "shape": "5×5"
                 }
               ]
             },
             {
               "id": "I-5-3",
-              "title": "5.3 정원외",
+              "title": "5.3 지원율 상승 5개 모집단위(정원내)",
               "tables": [
                 {
-                  "id": "T012",
-                  "index": 12,
-                  "title": "정원외",
-                  "file": "hwpx/T012_[참고]_2025학년도_대비_지원율_상승_및_하락_5개.json",
+                  "id": "T010a",
+                  "index": 10,
+                  "title": "지원율 상승 5개 모집단위(정원내)",
+                  "file": "hwpx/T010a_지원율_상승_5개_모집단위(정원내).json",
                   "status": "auto-extracted",
-                  "shape": "7×10"
+                  "shape": "5×5"
+                }
+              ]
+            },
+            {
+              "id": "I-5-4",
+              "title": "5.4 지원율 하락 5개 모집단위(정원내)",
+              "tables": [
+                {
+                  "id": "T010b",
+                  "index": 10,
+                  "title": "지원율 하락 5개 모집단위(정원내)",
+                  "file": "hwpx/T010b_지원율_하락_5개_모집단위(정원내).json",
+                  "status": "auto-extracted",
+                  "shape": "5×5"
+                }
+              ]
+            },
+            {
+              "id": "I-5-5",
+              "title": "5.5 지원율 상승 5개 모집단위(정원외)",
+              "tables": [
+                {
+                  "id": "T012a",
+                  "index": 12,
+                  "title": "지원율 상승 5개 모집단위(정원외)",
+                  "file": "hwpx/T012a_지원율_상승_5개_모집단위(정원외).json",
+                  "status": "auto-extracted",
+                  "shape": "5×5"
+                }
+              ]
+            },
+            {
+              "id": "I-5-6",
+              "title": "5.6 지원율 하락 5개 모집단위(정원외)",
+              "tables": [
+                {
+                  "id": "T012b",
+                  "index": 12,
+                  "title": "지원율 하락 5개 모집단위(정원외)",
+                  "file": "hwpx/T012b_지원율_하락_5개_모집단위(정원외).json",
+                  "status": "auto-extracted",
+                  "shape": "5×5"
                 }
               ]
             }

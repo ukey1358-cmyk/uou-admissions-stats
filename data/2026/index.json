@@ -65,15 +65,29 @@
             },
             {
               "id": "I-1-4",
-              "title": "1.4 상위 및 하위 5개 모집단위",
+              "title": "1.4 지원율 상위 5개 모집단위",
               "tables": [
                 {
-                  "id": "T003",
+                  "id": "T003a",
                   "index": 3,
-                  "title": "2026학년도 상위 및 하위 5개 모집단위",
-                  "file": "hwpx/T003_◦2026학년도_상위_및_하위_5개_모집단위.json",
+                  "title": "지원율 상위 5개 모집단위",
+                  "file": "hwpx/T003a_상위_5개_모집단위.json",
                   "status": "auto-extracted",
-                  "shape": "7×10"
+                  "shape": "5×5"
+                }
+              ]
+            },
+            {
+              "id": "I-1-5",
+              "title": "1.5 지원율 하위 5개 모집단위",
+              "tables": [
+                {
+                  "id": "T003b",
+                  "index": 3,
+                  "title": "지원율 하위 5개 모집단위",
+                  "file": "hwpx/T003b_하위_5개_모집단위.json",
+                  "status": "auto-extracted",
+                  "shape": "5×5"
                 }
               ]
             }

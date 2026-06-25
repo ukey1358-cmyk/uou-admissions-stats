@@ -440,40 +440,6 @@
           ]
         },
         {
-          "id": "I-8",
-          "title": "8. 예체능·특기·경기 추가",
-          "groups": [
-            {
-              "id": "I-8-2",
-              "title": "8.2 특기자 추가",
-              "tables": [
-                {
-                  "id": "T050",
-                  "index": 50,
-                  "title": "특기자 특별전형",
-                  "file": "hwpx/T050_□_특기자_특별전형.json",
-                  "status": "auto-extracted",
-                  "shape": "10×9"
-                }
-              ]
-            },
-            {
-              "id": "I-8-3",
-              "title": "8.3 경기실적 우수자 추가",
-              "tables": [
-                {
-                  "id": "T051",
-                  "index": 51,
-                  "title": "경기실적우수자 특별전형",
-                  "file": "hwpx/T051_□_경기실적우수자_특별전형.json",
-                  "status": "auto-extracted",
-                  "shape": "16×9"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": "I-9",
           "title": "9. 학생부 석차등급",
           "groups": [
@@ -694,6 +660,34 @@
                   "file": "hwpx/T047_□_2026학년도_의예과_면접_결시율_현황.json",
                   "status": "auto-extracted",
                   "shape": "6×8"
+                }
+              ]
+            },
+            {
+              "id": "II-1-4",
+              "title": "1.4 특기자 특별전형",
+              "tables": [
+                {
+                  "id": "T050",
+                  "index": 50,
+                  "title": "특기자 특별전형",
+                  "file": "hwpx/T050_□_특기자_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "10×9"
+                }
+              ]
+            },
+            {
+              "id": "II-1-5",
+              "title": "1.5 경기실적우수자 특별전형",
+              "tables": [
+                {
+                  "id": "T051",
+                  "index": 51,
+                  "title": "경기실적우수자 특별전형",
+                  "file": "hwpx/T051_□_경기실적우수자_특별전형.json",
+                  "status": "auto-extracted",
+                  "shape": "16×9"
                 }
               ]
             }
